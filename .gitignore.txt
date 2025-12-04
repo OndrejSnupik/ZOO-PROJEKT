@@ -1,0 +1,28 @@
+# --- CLion a CMake (Důležité!) ---
+.idea/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# --- Zkompilované soubory (C++) ---
+*.o
+*.obj
+*.lib
+*.a
+*.dylib
+*.so
+*.dll
+*.exe
+*.out
+*.app
+
+# --- Operační systém ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Ostatní ---
+*.swp
+*~
