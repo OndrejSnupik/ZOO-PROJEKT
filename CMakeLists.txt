@@ -9,4 +9,6 @@ add_executable(ZOO_PROJEKT
         Tile.h
         Hallway.cpp
         Hallway.h
+        Map.cpp
+        Map.h
 )

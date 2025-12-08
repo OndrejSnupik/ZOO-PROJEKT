@@ -36,14 +36,14 @@ void Tile::printTile(bool hasHero) {
     const int SIZE = 7;
     char point [SIZE][SIZE];
 
-    for (int x = 0; x < SIZE; x++) {
-        for (int y = 0; y < SIZE; y++) {
-            point[x][y] = '#';
+    for (int y = 0; y < SIZE; y++) {
+        for (int x = 0; x < SIZE; x++) {
+            point[y][x] = '#';
         }
     }
-    for (int x = 1; x < SIZE - 1; x++) {
-        for (int y = 1; y < SIZE -1; y++) {
-            point[x][y] = ' ';
+    for (int y = 1; y < SIZE - 1; y++) {
+        for (int x = 1; x < SIZE -1; x++) {
+            point[y][x] = ' ';
         }
     }
 
@@ -72,10 +72,10 @@ void Tile::printTile(bool hasHero) {
     if (hasHero) {
         point[center][center] = 'H';
     }
-    for (int x = 0; x < SIZE; x++) {
+    for (int y = 0; y < SIZE; y++) {
         std::cout << "\t";
-        for (int y = 0; y < SIZE; y++) {
-            std::cout << point[x][y] << " ";
+        for (int x = 0; x < SIZE; x++) {
+            std::cout << point[y][x] << " ";
         }
         std::cout << std::endl;
     }
