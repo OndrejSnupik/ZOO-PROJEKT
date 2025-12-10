@@ -11,4 +11,8 @@ add_executable(ZOO_PROJEKT
         Hallway.h
         Map.cpp
         Map.h
+        Hero.cpp
+        Hero.h
+        Game.cpp
+        Game.h
 )

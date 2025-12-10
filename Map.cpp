@@ -48,7 +48,13 @@ Tile* Map::getTile(int x, int y) {
         return nullptr;
     }
 
-
 }
 
+int Map::getWidth() {
+    return m_width;
+}
+
+int Map::getHeight() {
+    return m_height;
+}
 
