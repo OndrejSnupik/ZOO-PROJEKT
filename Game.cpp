@@ -51,17 +51,63 @@ void Game::handleInput() {
     std::cout << "> ";
     std::cin >> input;
 
-    int targetX = m_hero->getX();
-    int targetY = m_hero->getY();
+    int currentX = m_hero->getX();
+    int currentY = m_hero->getY();
+
+    Tile* currentTile = m_map->getTile(currentX, currentY);
+
+    int targetX = currentX;
+    int targetY = currentY;
 
     switch (input) {
-        case 'w': targetY--; break;
-        case 's': targetY++; break;
-        case 'a': targetX--; break;
-        case 'd': targetX++; break;
-        case 'q': m_isRunning = false; return;
-        default: return;
+        case 'w':
+            if (currentTile->hasExit(0)) {
+                targetY--;
+            } else {
+                std::cout << "Narazil jsi do zdi, tady cesta nevede" << std::endl;
+                std::cin.ignore(); std::cin.get();
+                return;
+            }
+            break;
+
+        case 's':
+            if (currentTile->hasExit(1)) {
+                targetY++;
+            } else {
+                std::cout << "Narazil jsi do zdi, tady cesta nevede" << std::endl;
+                std::cin.ignore(); std::cin.get();
+                return;
+            }
+            break;
+
+        case 'a':
+            if (currentTile->hasExit(2)) {
+                targetX--;
+            } else {
+                std::cout << "Narazil jsi do zdi, tady cesta nevede" << std::endl;
+                std::cin.ignore(); std::cin.get();
+                return;
+            }
+            break;
+
+        case 'd':
+            if (currentTile->hasExit(3)) {
+                targetX++;
+            } else {
+                std::cout << "Narazil jsi do zdi, tady cesta nevede" << std::endl;
+                std::cin.ignore(); std::cin.get();
+                return;
+            }
+            break;
+
+        case 'q':
+            m_isRunning = false;
+            return;
+
+        default:
+            return;
     }
+
     if (targetX < 0 || targetX >= m_map->getWidth() || targetY < 0 || targetY >= m_map->getHeight()) {
         std::cout << "Mimo mapu" << std::endl;
         std::cin.ignore(); std::cin.get();
