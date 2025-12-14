@@ -15,4 +15,6 @@ add_executable(ZOO_PROJEKT
         Hero.h
         Game.cpp
         Game.h
+        Menu.cpp
+        Menu.h
 )

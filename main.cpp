@@ -3,14 +3,11 @@
 //
 
 
-#include "Game.h"
+#include "Menu.h"
 
 int main() {
-    // Vytvoříme instanci hry
-    Game myGame;
-
-    // Spustíme hlavní smyčku
-    myGame.run();
+    Menu appMenu;
+    appMenu.run();
 
     return 0;
 }
