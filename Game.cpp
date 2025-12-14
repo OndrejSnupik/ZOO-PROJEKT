@@ -5,11 +5,14 @@
 #include <ctime>
 
 Game::Game() {
+    // generátor náhodných čísel
     std::srand(std::time(nullptr));
 
+    // Vytvoří mapu a hrdinu
     m_map = new Map(20, 20);
     m_hero = new Hero(10, 10, 100);
 
+    //Vloží startovní dlaždici doprostřed mapy
     m_map->placeTile(10, 10, new Hallway(true, true, true, true));
 
     m_isRunning = true;
@@ -23,6 +26,7 @@ Game::~Game() {
 void Game::run() {
     std::cout << "--- HRA ZACINA ---" << std::endl;
 
+    // Hlavní herní smyčka
     while (m_isRunning) {
         for(int i=0; i<3; i++) std::cout << "\n";
 
@@ -56,9 +60,10 @@ void Game::handleInput() {
     int targetX = currentX;
     int targetY = currentY;
 
+    // Směr pohybu podle klávesy
     switch (input) {
         case 'w':
-            if (currentTile->hasExit(0)) {
+            if (currentTile->hasExit(0)) { // Kontrola jeslti vede cesta na sever
                 targetY--;
             } else {
                 std::cout << "Au! Narazil jsi do zdi." << std::endl;
@@ -68,7 +73,7 @@ void Game::handleInput() {
             break;
 
         case 's':
-            if (currentTile->hasExit(1)) {
+            if (currentTile->hasExit(1)) { // Kontrola jihu
                 targetY++;
             } else {
                 std::cout << "Au! Narazil jsi do zdi." << std::endl;
@@ -78,7 +83,7 @@ void Game::handleInput() {
             break;
 
         case 'a':
-            if (currentTile->hasExit(2)) {
+            if (currentTile->hasExit(2)) { // Kontrola západu
                 targetX--;
             } else {
                 std::cout << "Au! Narazil jsi do zdi." << std::endl;
@@ -88,7 +93,7 @@ void Game::handleInput() {
             break;
 
         case 'd':
-            if (currentTile->hasExit(3)) {
+            if (currentTile->hasExit(3)) { // Kontrola východu
                 targetX++;
             } else {
                 std::cout << "Au! Narazil jsi do zdi." << std::endl;
@@ -97,7 +102,7 @@ void Game::handleInput() {
             }
             break;
 
-        case 'q':
+        case 'q': // Ukončí hru
             m_isRunning = false;
             return;
 
@@ -105,16 +110,19 @@ void Game::handleInput() {
             return;
     }
 
+    // Zkontroluje jestli se hráč nesnaží vyjít mimo hranice mapy
     if (targetX < 0 || targetX >= m_map->getWidth() || targetY < 0 || targetY >= m_map->getHeight()) {
         std::cout << "Tam nemuzes, to je konec sveta!" << std::endl;
         std::cin.ignore(); std::cin.get();
         return;
     }
 
+    // Pokud na cílovém políčku nic není vygeneruje novou dlaždici
     if (m_map->getTile(targetX, targetY) == nullptr) {
 
         int requiredEntry = -1;
 
+        // Určí ze které strany hrdina přichází, aby na sebe cesty navazovaly
         if (targetY < currentY) requiredEntry = 1;
         else if (targetY > currentY) requiredEntry = 0;
         else if (targetX < currentX) requiredEntry = 3;
@@ -123,12 +131,14 @@ void Game::handleInput() {
         generateRandomTile(targetX, targetY, requiredEntry);
     }
 
+    // Pokud je cílové políčko platné, přesune tam hrdinu
     if (m_map->getTile(targetX, targetY) != nullptr) {
         m_hero->setPosition(targetX, targetY);
     }
 }
 
 void Game::generateRandomTile(int x, int y, int incomingDirection) {
+    // Zkusí 10x vygenerovat náhodnou dlaždici, která sedí
     for (int pokus = 0; pokus < 10; pokus++) {
 
         bool r1 = std::rand() % 2;
@@ -136,11 +146,13 @@ void Game::generateRandomTile(int x, int y, int incomingDirection) {
         bool r3 = std::rand() % 2;
         bool r4 = std::rand() % 2;
 
+        // Zajistí, aby místnost nebyla úplně uzavřená
         if (!r1 && !r2 && !r3 && !r4) r1 = true;
 
         Tile* newTile = new Hallway(r1, r2, r3, r4);
 
         bool fits = false;
+        // Bude dlaždici otáčet, dokud nenajde polohu, která navazuje na vstup
         for (int i = 0; i < 4; i++) {
             if (newTile->hasExit(incomingDirection)) {
                 fits = true;
@@ -153,9 +165,10 @@ void Game::generateRandomTile(int x, int y, int incomingDirection) {
             m_map->placeTile(x, y, newTile);
             return;
         } else {
-            delete newTile;
+            delete newTile; // Pokud nepasuje smaže ji a zkusí to znovu
         }
     }
 
+    // Pokud se nepodaří najít náhodnou dlazdici , vloží křižovatku
     m_map->placeTile(x, y, new Hallway(true, true, true, true));
 }

@@ -9,16 +9,17 @@
 
 
 class Game {
+    private:
     Map* m_map;
     Hero* m_hero;
-    bool m_isRunning;
+    bool m_isRunning; // Indikuje jestli herní smyčka běží
 
-    void handleInput();
-    void generateRandomTile(int x, int y, int incomingDirection);
+    void handleInput(); // vstupy z klávesnice
+    void generateRandomTile(int x, int y, int incomingDirection); // Generuje novou místnost
 public:
     Game();
     ~Game();
-    void run();
+    void run(); // Spouští hlavní cyklus hry
 };
 
 
