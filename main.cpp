@@ -6,8 +6,8 @@
 #include "Menu.h"
 
 int main() {
-    Menu appMenu;
-    appMenu.run();
+    Menu appMenu;  // Vytvoření Menu
+    appMenu.run(); // Spuštění Menu
 
     return 0;
 }
