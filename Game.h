@@ -14,7 +14,7 @@ class Game {
     bool m_isRunning;
 
     void handleInput();
-    void generateRandomTile(int x, int y);
+    void generateRandomTile(int x, int y, int incomingDirection);
 public:
     Game();
     ~Game();
