@@ -9,14 +9,15 @@
 
 class Tile {
 protected:
-    bool m_exits[4];
+    bool m_exits[4]; // Pole určující, kde jsou východy (0=sever, 1=jih atd.)
     std::string m_type;
 public:
     Tile(std::string type);
     virtual ~Tile() = default;
+
     bool hasExit(int direction);
     std::string getType();
-    void rotate();
+    void rotate();// Otočí orientaci dlaždice
     virtual void printTile(bool hasHero);
 };
 
