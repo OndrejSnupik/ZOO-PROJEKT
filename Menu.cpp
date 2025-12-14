@@ -13,7 +13,14 @@ Menu::Menu() {
 
 void Menu::printOptions() {
     std::cout << "\n=========================" << std::endl;
-    std::cout << "      ZOO PROJEKT        " << std::endl;
+    std::cout << " /$$   /$$                              /$$      \n";
+    std::cout << "| $$  /$$/                             | $$      \n";
+    std::cout << "| $$ /$$/   /$$$$$$   /$$$$$$  /$$$$$$ | $$   /$$\n";
+    std::cout << "| $$$$$/   |____  $$ /$$__  $$|____  $$| $$  /$$/\n";
+    std::cout << "| $$  $$    /$$$$$$$| $$  \\__/ /$$$$$$$| $$$$$$/ \n";
+    std::cout << "| $$\\  $$  /$$__  $$| $$      /$$__  $$| $$_  $$ \n";
+    std::cout << "| $$ \\  $$|  $$$$$$$| $$     |  $$$$$$$| $$ \\  $$\n";
+    std::cout << "|__/  \\__/ \\_______/|__/      \\_______/|__/  \\__/" << std::endl;
     std::cout << "=========================" << std::endl;
     std::cout << "1. Nova hra" << std::endl;
     std::cout << "2. O autorech" << std::endl;
@@ -28,7 +35,7 @@ void Menu::run() {
         int choice;
         std::cout << "Tva volba: ";
 
-        // Zkontroluje jestli byl zadán správný typ vstupu (číslo)
+        // Ošetření vstupu (kdyby zadal písmeno)
         if (!(std::cin >> choice)) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -55,24 +62,27 @@ void Menu::run() {
 }
 
 void Menu::startNewGame() {
-    // Vytvoří novou instanci hry
+    // Tady vytvoříme celou tu hru, kterou jsme doteď ladili
     Game* myGame = new Game();
 
-    // Předá řízení herni třídě a program čeká dokud hra neskončí
+    // Spustíme ji (program se tady "zasekne" dokud hra neskončí)
     myGame->run();
 
-    delete myGame; // Po skončení hry smažeme instanci hry
+    // Jakmile hráč dá ve hře 'q', metoda run() skončí a program pokračuje zde:
+    delete myGame; // Uklidíme po hře
 
     std::cout << "Hra byla ukoncena. Vracim se do menu..." << std::endl;
 }
 
 void Menu::showCredits() {
-    std::cout << "\n--- O AUTORECH ---" << std::endl;
-    std::cout << "Vyvoril: Ondra a jeho AI partak Gemini" << std::endl;
-    std::cout << "Verze: 1.0 (Dungeon Crawler)" << std::endl;
-    std::cout << "Zmackni Enter pro navrat..." << std::endl;
+    std::cout << "\n--- O AUTORECH ---" << "\n";
+    std::cout << "- Šňupík Ondřej" << "\n";
+    std::cout << "- Bunža Petr" << "\n";
+    std::cout << "- Nguyen The Hoang" << "\n";
+    std::cout << "- Verze: 1.0 (Karak)" << "\n";
+    std::cout << "...Zmackni Enter pro navrat..." << std::endl;
 
-    // Počká na stisk klávesy enter
+    // Pauza na přečtení
     std::cin.ignore();
     std::cin.get();
 }
