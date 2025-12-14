@@ -11,14 +11,15 @@
 
 class Map {
 private:
+    // Mřížka mapy uložená jako 2D pole do Vektoru
     std::vector<std::vector<Tile*>> m_grid;
     int m_width;
     int m_height;
 public:
     Map(int width, int height);
     ~Map();
-    void placeTile(int x, int y, Tile* tile);
-    Tile* getTile(int x, int y);
+    void placeTile(int x, int y, Tile* tile); // Vloží dlaždici na konkrétní místo
+    Tile* getTile(int x, int y);              // Vrátí ukazatel na dlaždici na dané pozici
     int getWidth();
     int getHeight();
 
