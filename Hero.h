@@ -8,9 +8,9 @@
 
 class Hero {
 private:
-    int m_x;
-    int m_y;
-    int m_hp;
+    int m_x;  //  Souřadnice x hrdiny
+    int m_y;  //  Suřadnice y hrdiny
+    int m_hp; //  Počet životů
 public:
     Hero(int x, int y, int hp);
     int getX();

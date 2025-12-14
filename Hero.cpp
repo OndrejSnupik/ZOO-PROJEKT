@@ -6,6 +6,7 @@
 
 #include <iostream>
 
+// Inicializuje hrdinu s danou polohou a životy
 Hero::Hero(int x, int y, int hp) {
     m_x = x;
     m_y = y;
