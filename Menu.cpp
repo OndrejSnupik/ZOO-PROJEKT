@@ -28,7 +28,7 @@ void Menu::run() {
         int choice;
         std::cout << "Tva volba: ";
 
-        // Ošetření vstupu (kdyby zadal písmeno)
+        // Zkontroluje jestli byl zadán správný typ vstupu (číslo)
         if (!(std::cin >> choice)) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -55,14 +55,13 @@ void Menu::run() {
 }
 
 void Menu::startNewGame() {
-    // Tady vytvoříme celou tu hru, kterou jsme doteď ladili
+    // Vytvoří novou instanci hry
     Game* myGame = new Game();
 
-    // Spustíme ji (program se tady "zasekne" dokud hra neskončí)
+    // Předá řízení herni třídě a program čeká dokud hra neskončí
     myGame->run();
 
-    // Jakmile hráč dá ve hře 'q', metoda run() skončí a program pokračuje zde:
-    delete myGame; // Uklidíme po hře
+    delete myGame; // Po skončení hry smažeme instanci hry
 
     std::cout << "Hra byla ukoncena. Vracim se do menu..." << std::endl;
 }
@@ -73,7 +72,7 @@ void Menu::showCredits() {
     std::cout << "Verze: 1.0 (Dungeon Crawler)" << std::endl;
     std::cout << "Zmackni Enter pro navrat..." << std::endl;
 
-    // Pauza na přečtení
+    // Počká na stisk klávesy enter
     std::cin.ignore();
     std::cin.get();
 }
