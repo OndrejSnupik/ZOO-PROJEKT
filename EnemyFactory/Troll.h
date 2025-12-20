@@ -7,6 +7,11 @@
 
 
 class Troll {
+public:
+    Troll();
+    virtual ~Troll();
+    virtual int getAttack() = 0;
+    virtual int getHeath() = 0;
 };
 
 

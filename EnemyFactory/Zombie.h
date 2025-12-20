@@ -7,6 +7,11 @@
 
 
 class Zombie {
+public:
+    Zombie();
+    virtual ~Zombie();
+    virtual int getAttack() = 0;
+    virtual int getHeath() = 0;
 };
 
 

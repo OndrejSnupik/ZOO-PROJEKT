@@ -7,6 +7,11 @@
 
 
 class Skeleton {
+public:
+    Skeleton();
+    virtual ~Skeleton();
+    virtual int getAttack() = 0;
+    virtual int getHeath() = 0;
 };
 
 

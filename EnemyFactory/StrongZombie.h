@@ -6,7 +6,16 @@
 #define ZOO_PROJEKT_STRONGZOMBIE_H
 
 
-class StrongZombie {
+#include "Zombie.h"
+
+class StrongZombie : public Zombie {
+private:
+    int m_attack;
+    int m_heath;
+public:
+    StrongZombie();
+    int getAttack() override;
+    int getHeath() override;
 };
 
 
