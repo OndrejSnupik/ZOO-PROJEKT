@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 4.0)
+project(ZOO_PROJEKT)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(ZOO_PROJEKT
+        main.cpp
+        Tile.cpp
+        Tile.h
+        Hallway.cpp
+        Hallway.h
+        Map.cpp
+        Map.h
+        Hero.cpp
+        Hero.h
+        Game.cpp
+        Game.h
+        Menu.cpp
+        Menu.h
+        EnemyFactory/EnemyFactory.cpp
+        EnemyFactory/EnemyFactory.h
+        EnemyFactory/EasyEnemyFactory.cpp
+        EnemyFactory/EasyEnemyFactory.h
+        EnemyFactory/HardEnemyFactory.cpp
+        EnemyFactory/HardEnemyFactory.h
+        EnemyFactory/Zombie.cpp
+        EnemyFactory/Zombie.h
+        EnemyFactory/Skeleton.cpp
+        EnemyFactory/Skeleton.h
+        EnemyFactory/Troll.cpp
+        EnemyFactory/Troll.h
+        EnemyFactory/Dragon.cpp
+        EnemyFactory/Dragon.h
+        EnemyFactory/WeakZombie.cpp
+        EnemyFactory/WeakZombie.h
+        EnemyFactory/StrongZombie.cpp
+        EnemyFactory/StrongZombie.h
+        EnemyFactory/WeakSkeleton.cpp
+        EnemyFactory/WeakSkeleton.h
+        EnemyFactory/StrongSkeleton.cpp
+        EnemyFactory/StrongSkeleton.h
+        EnemyFactory/WeakTroll.cpp
+        EnemyFactory/WeakTroll.h
+        EnemyFactory/StrongTroll.cpp
+        EnemyFactory/StrongTroll.h
+        EnemyFactory/Enemy.cpp
+        EnemyFactory/Enemy.h
+        EnemyFactory/Enemy.h
+        combatSystem.cpp
+        combatSystem.h
+)
