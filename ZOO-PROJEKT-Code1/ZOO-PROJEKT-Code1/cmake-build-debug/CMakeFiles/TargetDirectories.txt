@@ -1,0 +1,3 @@
+C:/Users/hoang/Desktop/ZOO-PROJEKT-Code1/ZOO-PROJEKT-Code1/cmake-build-debug/CMakeFiles/ZOO_PROJEKT.dir
+C:/Users/hoang/Desktop/ZOO-PROJEKT-Code1/ZOO-PROJEKT-Code1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/hoang/Desktop/ZOO-PROJEKT-Code1/ZOO-PROJEKT-Code1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
