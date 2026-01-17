@@ -13,8 +13,7 @@ private:
     int m_heath;
 public:
     WeakTroll();
-    int getAttack() override;
-    int getHeath() override;
+    char getSymbol() override;
 };
 
 

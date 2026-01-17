@@ -7,16 +7,16 @@
 
 #include "../Menu.h"
 #include<iostream>
+#include "Enemy.h"
 
-class Dragon {
+class Dragon : public Enemy {
 private:
     int m_attack;
     int m_heath;
 public:
     Dragon();
-    ~Dragon();
-    int getAttack();
-    int getHeath();
+    ~Dragon() override;
+    char getSymbol() override;
 };
 
 

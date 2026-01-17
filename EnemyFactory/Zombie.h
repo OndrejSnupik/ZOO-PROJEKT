@@ -5,14 +5,12 @@
 #ifndef ZOO_PROJEKT_ZOMBIE_H
 #define ZOO_PROJEKT_ZOMBIE_H
 
+#include"Enemy.h"
 
-class Zombie {
+class Zombie : public Enemy {
 public:
-    Zombie();
-    virtual ~Zombie();
-    virtual int getAttack() = 0;
-    virtual int getHeath() = 0;
+    Zombie() = default;
+    ~Zombie() override = default;
 };
-
 
 #endif //ZOO_PROJEKT_ZOMBIE_H
