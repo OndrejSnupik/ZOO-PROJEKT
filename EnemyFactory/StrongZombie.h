@@ -14,8 +14,7 @@ private:
     int m_heath;
 public:
     StrongZombie();
-    int getAttack() override;
-    int getHeath() override;
+    char getSymbol() override;
 };
 
 

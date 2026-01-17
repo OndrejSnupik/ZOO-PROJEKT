@@ -9,8 +9,8 @@
 class Menu {
 private:
     bool m_isRunning; // Určuje jestli menu jede
-
     void printOptions();
+    int chooseDifficulty();
     void startNewGame();
     void showCredits();
 

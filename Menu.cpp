@@ -12,7 +12,7 @@ Menu::Menu() {
 }
 
 void Menu::printOptions() {
-    std::cout << "\n=========================" << std::endl;
+    std::cout << "\n=========================" << "\n";
     std::cout << " /$$   /$$                              /$$      \n";
     std::cout << "| $$  /$$/                             | $$      \n";
     std::cout << "| $$ /$$/   /$$$$$$   /$$$$$$  /$$$$$$ | $$   /$$\n";
@@ -20,20 +20,40 @@ void Menu::printOptions() {
     std::cout << "| $$  $$    /$$$$$$$| $$  \\__/ /$$$$$$$| $$$$$$/ \n";
     std::cout << "| $$\\  $$  /$$__  $$| $$      /$$__  $$| $$_  $$ \n";
     std::cout << "| $$ \\  $$|  $$$$$$$| $$     |  $$$$$$$| $$ \\  $$\n";
-    std::cout << "|__/  \\__/ \\_______/|__/      \\_______/|__/  \\__/" << std::endl;
-    std::cout << "=========================" << std::endl;
-    std::cout << "1. Nova hra" << std::endl;
-    std::cout << "2. O autorech" << std::endl;
-    std::cout << "0. Konec" << std::endl;
-    std::cout << "=========================" << std::endl;
+    std::cout << "|__/  \\__/ \\_______/|__/      \\_______/|__/  \\__/" << "\n";
+    std::cout << "=========================" << "\n";
+    std::cout << "1. Nova hra" << "\n";
+    std::cout << "2. O autorech" << "\n";
+    std::cout << "0. Konec" << "\n";
+    std::cout << "=========================" << "\n";
+    std::cout << "Tva volba: " << std::endl;
+}
+
+int Menu::chooseDifficulty() {
+    int difficulty;
+    while (true) {
+        //print
+        std::cout << "=========================" << "\n";
+        std::cout << "1. Easy" << "\n";
+        std::cout << "2. Hard" << "\n";
+        std::cout << "=========================" << "\n";
+        std::cout << "Zvol si obtiznost: " << std::endl;
+
+        if (!(std::cin >> difficulty)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Neplatny vstup!" << std::endl;
+            continue;
+        } if (difficulty == 1 || difficulty == 2)
+            return difficulty;
+        std::cout << "Neplatna volba." << std::endl;
+    }
 }
 
 void Menu::run() {
     while (m_isRunning) {
         printOptions();
-
         int choice;
-        std::cout << "Tva volba: ";
 
         // Ošetření vstupu (kdyby zadal písmeno)
         if (!(std::cin >> choice)) {
@@ -62,8 +82,9 @@ void Menu::run() {
 }
 
 void Menu::startNewGame() {
+    int difficulty = chooseDifficulty();
     // Tady vytvoříme celou tu hru, kterou jsme doteď ladili
-    Game* myGame = new Game();
+    Game* myGame = new Game(difficulty);
 
     // Spustíme ji (program se tady "zasekne" dokud hra neskončí)
     myGame->run();

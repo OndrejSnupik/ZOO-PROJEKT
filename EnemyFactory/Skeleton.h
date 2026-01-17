@@ -5,14 +5,12 @@
 #ifndef ZOO_PROJEKT_SKELETON_H
 #define ZOO_PROJEKT_SKELETON_H
 
+#include "Enemy.h"
 
-class Skeleton {
+class Skeleton : public Enemy {
 public:
-    Skeleton();
-    virtual ~Skeleton();
-    virtual int getAttack() = 0;
-    virtual int getHeath() = 0;
+    Skeleton() = default;
+    ~Skeleton() override = default;
 };
-
 
 #endif //ZOO_PROJEKT_SKELETON_H

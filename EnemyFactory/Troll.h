@@ -5,14 +5,12 @@
 #ifndef ZOO_PROJEKT_TROLL_H
 #define ZOO_PROJEKT_TROLL_H
 
+#include "Enemy.h"
 
-class Troll {
+class Troll : public Enemy {
 public:
-    Troll();
-    virtual ~Troll();
-    virtual int getAttack() = 0;
-    virtual int getHeath() = 0;
+    Troll() = default;
+    ~Troll() override = default;
 };
-
 
 #endif //ZOO_PROJEKT_TROLL_H

@@ -9,10 +9,6 @@ StrongZombie::StrongZombie() {
     m_heath = 100;
 }
 
-int StrongZombie::getAttack() {
-    return m_attack;
-}
-
-int StrongZombie::getHeath() {
-    return m_heath;
+char StrongZombie::getSymbol() {
+    return 'Z';
 }
