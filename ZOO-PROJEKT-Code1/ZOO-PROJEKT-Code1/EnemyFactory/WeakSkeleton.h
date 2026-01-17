@@ -13,8 +13,6 @@ private:
     int m_heath;
 public:
     WeakSkeleton();
-    int getAttack() override;
-    int getHeath() override;
     char getSymbol() override;
 };
 

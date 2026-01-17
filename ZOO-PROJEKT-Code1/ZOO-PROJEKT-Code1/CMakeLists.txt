@@ -46,4 +46,6 @@ add_executable(ZOO_PROJEKT
         EnemyFactory/Enemy.cpp
         EnemyFactory/Enemy.h
         EnemyFactory/Enemy.h
+        combatSystem.cpp
+        combatSystem.h
 )

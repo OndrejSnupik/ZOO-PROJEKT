@@ -7,10 +7,11 @@
 #include <iostream>
 
 // Inicializuje hrdinu s danou polohou a životy
-Hero::Hero(int x, int y, int hp) {
+Hero::Hero(int x, int y, int hp, int baseAttack) {
     m_x = x;
     m_y = y;
     m_hp = hp;
+    m_baseAttack = baseAttack;
 }
 
 int Hero::getX() {
@@ -37,6 +38,18 @@ void Hero::changeHp(int hp) {
         m_hp = 0;
         std::cout << "Hrdina zemrel" << std::endl;
     }
+}
+
+void Hero::setHeath(int amount) {
+    m_hp = amount;
+}
+
+int Hero::getBaseAttack() {
+    return m_baseAttack;
+}
+
+std::string Hero::getName() {
+    return m_name;
 }
 
 

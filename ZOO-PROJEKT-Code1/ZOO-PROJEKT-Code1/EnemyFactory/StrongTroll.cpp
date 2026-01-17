@@ -9,14 +9,6 @@ StrongTroll::StrongTroll() {
     m_heath = 120;
 }
 
-int StrongTroll::getAttack() {
-    return m_attack;
-}
-
-int StrongTroll::getHeath() {
-    return m_heath;
-}
-
 char StrongTroll::getSymbol() {
     return 'T';
 }
