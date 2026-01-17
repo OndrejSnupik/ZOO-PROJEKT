@@ -4,17 +4,11 @@
 
 #include "WeakTroll.h"
 
+#include <set>
+
 WeakTroll::WeakTroll() {
-    m_attack = 10;
-    m_heath = 70;
-}
-
-int WeakTroll::getAttack() {
-    return m_attack;
-}
-
-int WeakTroll::getHeath() {
-    return m_heath;
+    setAttack(10);
+    setHeath(70);
 }
 
 char WeakTroll::getSymbol() {

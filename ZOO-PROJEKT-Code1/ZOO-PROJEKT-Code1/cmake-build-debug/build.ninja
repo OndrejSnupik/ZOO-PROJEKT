@@ -196,6 +196,13 @@ build CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj: CXX_COMPILER__ZOO_P
   OBJECT_DIR = CMakeFiles\ZOO_PROJEKT.dir
   OBJECT_FILE_DIR = CMakeFiles\ZOO_PROJEKT.dir\EnemyFactory
 
+build CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj: CXX_COMPILER__ZOO_PROJEKT_unscanned_Debug C$:/Users/hoang/Desktop/ZOO-PROJEKT-Code1/ZOO-PROJEKT-Code1/combatSystem.cpp || cmake_object_order_depends_target_ZOO_PROJEKT
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\ZOO_PROJEKT.dir\combatSystem.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ZOO_PROJEKT.dir
+  OBJECT_FILE_DIR = CMakeFiles\ZOO_PROJEKT.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ZOO_PROJEKT
@@ -204,7 +211,7 @@ build CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj: CXX_COMPILER__ZOO_P
 #############################################
 # Link the executable ZOO_PROJEKT.exe
 
-build ZOO_PROJEKT.exe: CXX_EXECUTABLE_LINKER__ZOO_PROJEKT_Debug CMakeFiles/ZOO_PROJEKT.dir/main.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Hallway.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Map.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Hero.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Game.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Menu.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/EnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/EasyEnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/HardEnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Zombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Skeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Troll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Dragon.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakZombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongZombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakSkeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongSkeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakTroll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongTroll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj
+build ZOO_PROJEKT.exe: CXX_EXECUTABLE_LINKER__ZOO_PROJEKT_Debug CMakeFiles/ZOO_PROJEKT.dir/main.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Hallway.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Map.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Hero.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Game.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/Menu.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/EnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/EasyEnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/HardEnemyFactory.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Zombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Skeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Troll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Dragon.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakZombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongZombie.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakSkeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongSkeleton.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakTroll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongTroll.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

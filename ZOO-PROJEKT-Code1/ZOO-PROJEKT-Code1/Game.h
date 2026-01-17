@@ -4,6 +4,7 @@
 
 #ifndef ZOO_PROJEKT_GAME_H
 #define ZOO_PROJEKT_GAME_H
+#include "CombatSystem.h"
 #include "Hero.h"
 #include "Map.h"
 #include "EnemyFactory/Enemy.h"
@@ -20,10 +21,14 @@ class Game {
     bool m_isRunning; // Indikuje jestli herní smyčka běží
     int m_difficulty;
     bool m_dragonSpawned;
+    //stored hero previous tile
+    int m_lastHeroX;
+    int m_lastHeroY;
 
     void handleInput(); // vstupy z klávesnice
     void generateRandomTile(int x, int y, int incomingDirection); // Generuje novou místnost
     Enemy* spawnEnemy();
+    void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);
 public:
     Game(int difficulty);
     ~Game();

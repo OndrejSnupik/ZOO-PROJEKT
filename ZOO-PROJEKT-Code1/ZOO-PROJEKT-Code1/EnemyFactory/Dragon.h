@@ -16,8 +16,6 @@ private:
 public:
     Dragon();
     ~Dragon() override;
-    int getAttack() override;
-    int getHeath() override;
     char getSymbol() override;
 };
 

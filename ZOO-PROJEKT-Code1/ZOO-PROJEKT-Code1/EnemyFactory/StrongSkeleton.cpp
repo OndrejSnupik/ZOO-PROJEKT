@@ -9,14 +9,6 @@ StrongSkeleton::StrongSkeleton() {
     m_heath = 70;
 }
 
-int StrongSkeleton::getAttack() {
-    return m_attack;
-}
-
-int StrongSkeleton::getHeath() {
-    return m_heath;
-}
-
 char StrongSkeleton::getSymbol() {
     return 'S';
 }
