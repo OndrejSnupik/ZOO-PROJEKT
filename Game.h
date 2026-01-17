@@ -11,6 +11,8 @@
 #include "EnemyFactory/EnemyFactory.h"
 #include "EnemyFactory/EasyEnemyFactory.h"
 #include  "EnemyFactory/HardEnemyFactory.h"
+#include <conio.h> // for _kbhit() and _getch()
+#include <windows.h> // for Sleep()
 
 class Game {
     private:
