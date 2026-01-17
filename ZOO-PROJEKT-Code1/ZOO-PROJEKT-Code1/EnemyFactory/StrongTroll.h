@@ -13,8 +13,6 @@ private:
     int m_heath;
 public:
     StrongTroll();
-    int getAttack() override;
-    int getHeath() override;
     char getSymbol() override;
 };
 

@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "CombatSystem.h"
+
 Game::Game(int difficulty) {
     // generátor náhodných čísel
     std::srand(std::time(nullptr));
@@ -14,19 +16,11 @@ Game::Game(int difficulty) {
     } else {
         m_enemyFactory = new HardEnemyFactory();
     }
-    //inside Tile class- delete this when done
-    // Zombie * zombie = m_enemyFactory->getZombie();
-    // Skeleton* skeleton = m_enemyFactory->getSkeleton();
-    // Troll * troll = m_enemyFactory->getTroll();
-    // Dragon * dragon = m_enemyFactory->getDragon();
-    // delete zombie;
-    // delete skeleton;
-    // delete troll;
-    // delete dragon;
+    m_enemy = nullptr;
 
     // Vytvoří mapu a hrdinu
     m_map = new Map(20, 20);
-    m_hero = new Hero(10, 10, 100);
+    m_hero = new Hero(10, 10, 100, 30);
 
     //Vloží startovní dlaždici doprostřed mapy
     m_map->placeTile(10, 10, new Hallway(true, true, true, true));
@@ -52,7 +46,8 @@ void Game::run() {
         int y = m_hero->getY();
         Tile* currentTile = m_map->getTile(x, y);
 
-        std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp() << std::endl;
+        std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp();
+        std::cout <<" Attack: "<< m_hero->getBaseAttack() << std::endl;
 
         if (currentTile != nullptr) {
             currentTile->printTile(true);
@@ -73,6 +68,9 @@ void Game::handleInput() {
 
     int currentX = m_hero->getX();
     int currentY = m_hero->getY();
+    //hero can be pushed back to previous tile when running away.
+    m_lastHeroX = currentX;
+    m_lastHeroY = currentY;
     Tile* currentTile = m_map->getTile(currentX, currentY);
 
     int targetX = currentX;
@@ -153,6 +151,15 @@ void Game::handleInput() {
     if (m_map->getTile(targetX, targetY) != nullptr) {
         m_hero->setPosition(targetX, targetY);
     }
+
+    // Combat check - open combat screen if there is an enemy
+    Tile * tile = m_map->getTile(targetX, targetY);
+    Enemy * enemy = tile->getEnemy();
+    if (enemy != nullptr) {
+        CombatSystem combat(m_hero, enemy);
+        CombatResult result = combat.run();
+        handleCombatResult(result, tile, enemy);
+    }
 }
 
 void Game::generateRandomTile(int x, int y, int incomingDirection) {
@@ -193,7 +200,7 @@ void Game::generateRandomTile(int x, int y, int incomingDirection) {
 }
 
 Enemy* Game::spawnEnemy() {
-    int roll = std::rand() % 100;
+    unsigned int roll = std::rand() % 100;
 
     //6 % chance for dragon to spawn
     //there is only 1 Dragon on the game
@@ -208,10 +215,29 @@ Enemy* Game::spawnEnemy() {
     }
     // 64% chance for normal enemy
     if (roll > 36) {
-        int r = std::rand() % 3;
+        unsigned int r = std::rand() % 3;
         if (r == 0) return m_enemyFactory->getZombie();
         if (r == 1) return m_enemyFactory->getSkeleton();
         return m_enemyFactory->getTroll();
     }
+    return nullptr;
+}
 
+void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {
+    switch (result) {
+        case CombatResult::EnemyDied:
+            std::cout << "Porazil jsi nepratele" << std::endl;
+            delete enemy;
+            tile->setEnemy(nullptr);
+            break;
+        case CombatResult::HeroDied:
+            std::cout << "Zemrel jsi" << std::endl;
+            m_isRunning = false;
+            break;
+        case CombatResult::HeroRan:
+            std::cout << "Utekl jsi z boje!\n";
+            //move back to previous tile
+            m_hero->setPosition(m_lastHeroX, m_lastHeroY);
+            break;
+    }
 }

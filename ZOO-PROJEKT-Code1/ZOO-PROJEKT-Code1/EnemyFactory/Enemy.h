@@ -7,11 +7,16 @@
 
 
 class Enemy {
+private:
+    int m_attack = 0;
+    int m_heath = 0;
 public:
     Enemy() = default;
     virtual ~Enemy() = default;
-    virtual int getAttack() = 0;
-    virtual int getHeath() = 0;
+    int getAttack();
+    int getHeath();
+    void setHeath(int amount);
+    void setAttack(int amount);
     virtual char getSymbol() = 0;
 };
 

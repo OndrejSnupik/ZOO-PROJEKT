@@ -8,13 +8,8 @@
 #include "Zombie.h"
 
 class WeakZombie : public Zombie {
-private:
-    int m_attack;
-    int m_heath;
 public:
     WeakZombie();
-    int getAttack() override;
-    int getHeath() override;
     char getSymbol() override;
 };
 
