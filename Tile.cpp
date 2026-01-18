@@ -6,12 +6,18 @@
 #include <iostream>
 
 Tile::Tile(std::string type) {
+    m_enemy = nullptr;
     m_type = type;
     // Na začátku nastaví všechny cesty jako zavřené
     for (int i=0; i<4; i++) {
         m_exits[i] = false;
     }
 }
+
+Tile::~Tile() {
+        delete m_enemy;
+}
+
 bool Tile::hasExit(int direction) {
     // Ověří platnost směru a vrátí jestli tam vede cesta
     if (direction >= 0 && direction < 4) {
@@ -81,6 +87,9 @@ void Tile::printTile(bool hasHero) {
     if (hasHero) {
         point[center][center] = 'H';
     }
+    if (m_enemy!= nullptr) {
+        point[center+2][center] = m_enemy->getSymbol();
+    }
 
     // Vypíše výslednou matici znaků do konzole
     for (int y = 0; y < SIZE; y++) {
@@ -90,6 +99,14 @@ void Tile::printTile(bool hasHero) {
         }
         std::cout << std::endl;
     }
+}
+
+void Tile::setEnemy(Enemy *enemy) {
+    m_enemy = enemy;
+}
+
+Enemy * Tile::getEnemy() {
+        return m_enemy;
 }
 
 

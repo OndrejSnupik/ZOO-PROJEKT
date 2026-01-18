@@ -14,10 +14,6 @@ Dragon::~Dragon() {
     //quit game or display the menu
 }
 
-int Dragon::getAttack() {
-    return m_attack;
-}
-
-int Dragon::getHeath() {
-    return m_heath;;
+char Dragon::getSymbol() {
+    return 'D';
 }

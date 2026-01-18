@@ -9,10 +9,6 @@ WeakSkeleton::WeakSkeleton() {
     m_heath = 50;
 }
 
-int WeakSkeleton::getAttack() {
-    return m_attack;
-}
-
-int WeakSkeleton::getHeath() {
-    return m_heath;
+char WeakSkeleton::getSymbol() {
+    return 'S';
 }

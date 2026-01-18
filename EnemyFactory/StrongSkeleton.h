@@ -13,8 +13,7 @@ private:
     int m_heath;
 public:
     StrongSkeleton();
-    int getAttack() override;
-    int getHeath() override;
+    char getSymbol() override;
 };
 
 

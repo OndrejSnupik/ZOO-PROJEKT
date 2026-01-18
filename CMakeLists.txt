@@ -17,4 +17,35 @@ add_executable(ZOO_PROJEKT
         Game.h
         Menu.cpp
         Menu.h
+        EnemyFactory/EnemyFactory.cpp
+        EnemyFactory/EnemyFactory.h
+        EnemyFactory/EasyEnemyFactory.cpp
+        EnemyFactory/EasyEnemyFactory.h
+        EnemyFactory/HardEnemyFactory.cpp
+        EnemyFactory/HardEnemyFactory.h
+        EnemyFactory/Zombie.cpp
+        EnemyFactory/Zombie.h
+        EnemyFactory/Skeleton.cpp
+        EnemyFactory/Skeleton.h
+        EnemyFactory/Troll.cpp
+        EnemyFactory/Troll.h
+        EnemyFactory/Dragon.cpp
+        EnemyFactory/Dragon.h
+        EnemyFactory/WeakZombie.cpp
+        EnemyFactory/WeakZombie.h
+        EnemyFactory/StrongZombie.cpp
+        EnemyFactory/StrongZombie.h
+        EnemyFactory/WeakSkeleton.cpp
+        EnemyFactory/WeakSkeleton.h
+        EnemyFactory/StrongSkeleton.cpp
+        EnemyFactory/StrongSkeleton.h
+        EnemyFactory/WeakTroll.cpp
+        EnemyFactory/WeakTroll.h
+        EnemyFactory/StrongTroll.cpp
+        EnemyFactory/StrongTroll.h
+        EnemyFactory/Enemy.cpp
+        EnemyFactory/Enemy.h
+        EnemyFactory/Enemy.h
+        combatSystem.cpp
+        combatSystem.h
 )
