@@ -5,8 +5,8 @@
 #include "WeakSkeleton.h"
 
 WeakSkeleton::WeakSkeleton() {
-    m_attack = 10;
-    m_heath = 50;
+    setAttack(10);
+    setHeath(45);
 }
 
 char WeakSkeleton::getSymbol() {

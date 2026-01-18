@@ -5,8 +5,8 @@
 #include "StrongZombie.h"
 
 StrongZombie::StrongZombie() {
-    m_attack = 10;
-    m_heath = 100;
+    setAttack(10);
+    setHeath(100);
 }
 
 char StrongZombie::getSymbol() {

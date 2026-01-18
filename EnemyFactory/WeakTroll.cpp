@@ -7,8 +7,8 @@
 #include <set>
 
 WeakTroll::WeakTroll() {
-    setAttack(10);
-    setHeath(70);
+    setAttack(8);
+    setHeath(80);
 }
 
 char WeakTroll::getSymbol() {

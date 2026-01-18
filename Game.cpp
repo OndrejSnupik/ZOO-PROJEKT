@@ -44,6 +44,7 @@ void Game::run() {
             int x = m_hero->getX();
             int y = m_hero->getY();
             Tile* currentTile = m_map->getTile(x, y);
+
             std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp();
             std::cout <<" Attack: "<< m_hero->getBaseAttack() << std::endl;
 
@@ -54,11 +55,14 @@ void Game::run() {
             }
             std::cout << "Ovladani: [w] Sever, [s] Jih, [a] Zapad, [d] Vychod, [q] Konec" << std::endl;
             redraw = false;
+            //check for combat
+            Tile * tile = m_map->getTile(m_hero->getX(), m_hero->getY());
+            checkForCombat(tile);
         }
         if (handleInput()) {
-            redraw = true;
-        };
-        Sleep(20);
+            redraw = true; // redraw new tile
+            //continue;
+        }
     }
 }
 
@@ -70,6 +74,9 @@ bool Game::handleInput() {
     char input = _getch(); // read key immediately
     int currentX = m_hero->getX();
     int currentY = m_hero->getY();
+    //hero can be pushed back to previous tile when running away.
+    m_lastHeroX = currentX;
+    m_lastHeroY = currentY;
     Tile* currentTile = m_map->getTile(currentX, currentY);
     int targetX = currentX;
     int targetY = currentY;
@@ -136,8 +143,14 @@ bool Game::handleInput() {
         generateRandomTile(targetX, targetY, requiredEntry);
     }
     // Pokud je cílové políčko platné, přesune tam hrdinu
-    m_hero->setPosition(targetX, targetY);
-    return true; // movement happend
+    if (m_map->getTile(targetX, targetY) != nullptr) {
+        m_hero->setPosition(targetX, targetY);
+    }
+    // Only return true if hero actually moved
+    if (targetX != currentX || targetY != currentY) {
+        return true;
+    }
+    return false;
 }
 
 
@@ -164,8 +177,10 @@ void Game::generateRandomTile(int x, int y, int incomingDirection) {
             }
             newTile->rotate();
         }
+        //spawn enemy randomly
         Enemy* enemy = spawnEnemy();
         newTile->setEnemy(enemy);
+
         if (fits) {
             m_map->placeTile(x, y, newTile);
             return;
@@ -200,6 +215,16 @@ Enemy* Game::spawnEnemy() {
         return m_enemyFactory->getTroll();
     }
     return nullptr;
+}
+// Combat check - open combat screen if there is an enemy
+void Game::checkForCombat(Tile *tile) {
+    if (tile == nullptr || tile->getEnemy() == nullptr ){
+        return;
+    }
+    Sleep(2000);
+    CombatSystem combat(m_hero, tile->getEnemy());
+    CombatResult result = combat.run();
+    handleCombatResult(result, tile, tile->getEnemy());
 }
 
 void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {

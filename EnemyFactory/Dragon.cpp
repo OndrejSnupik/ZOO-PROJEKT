@@ -5,8 +5,8 @@
 #include "Dragon.h"
 
 Dragon::Dragon() {
-    m_attack = 25;
-    m_heath = 200;
+    setAttack(25);
+    setHeath(190);
 }
 
 Dragon::~Dragon() {

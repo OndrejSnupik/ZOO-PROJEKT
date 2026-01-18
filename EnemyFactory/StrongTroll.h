@@ -8,9 +8,6 @@
 #include "Troll.h"
 
 class StrongTroll : public Troll{
-private:
-    int m_attack;
-    int m_heath;
 public:
     StrongTroll();
     char getSymbol() override;

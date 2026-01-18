@@ -5,8 +5,8 @@
 #include "StrongTroll.h"
 
 StrongTroll::StrongTroll() {
-    m_attack = 20;
-    m_heath = 120;
+    setAttack(14);
+    setHeath(120);
 }
 
 char StrongTroll::getSymbol() {

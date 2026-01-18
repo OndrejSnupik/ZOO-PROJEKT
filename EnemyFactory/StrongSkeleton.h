@@ -8,14 +8,9 @@
 #include "Skeleton.h"
 
 class StrongSkeleton : public Skeleton{
-private:
-    int m_attack;
-    int m_heath;
 public:
     StrongSkeleton();
     char getSymbol() override;
 };
-
-
 
 #endif //ZOO_PROJEKT_STRONGSKELETON_H

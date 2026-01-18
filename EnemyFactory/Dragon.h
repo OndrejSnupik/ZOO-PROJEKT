@@ -10,9 +10,6 @@
 #include "Enemy.h"
 
 class Dragon : public Enemy {
-private:
-    int m_attack;
-    int m_heath;
 public:
     Dragon();
     ~Dragon() override;

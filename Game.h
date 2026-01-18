@@ -34,6 +34,7 @@ class Game {
     bool handleInput(); // vstupy z klávesnice
     void generateRandomTile(int x, int y, int incomingDirection); // Generuje novou místnost
     Enemy* spawnEnemy();
+    void checkForCombat(Tile* tile);
     void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);
 public:
     Game(int difficulty);

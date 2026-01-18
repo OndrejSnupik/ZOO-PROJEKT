@@ -5,8 +5,8 @@
 #include "StrongSkeleton.h"
 
 StrongSkeleton::StrongSkeleton() {
-    m_attack = 20;
-    m_heath = 70;
+    setAttack(15);
+    setHeath(70);
 }
 
 char StrongSkeleton::getSymbol() {

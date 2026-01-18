@@ -21,6 +21,11 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2025.2.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeMinGWFindMake.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2025.2.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake"
 		},
 		{
@@ -847,11 +852,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/Program Files/JetBrains/CLion 2025.2.2/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX-CXXImportStd.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2025.2.2/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXCompiler.cmake.in"
 		},
 		{
@@ -907,8 +907,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/hoang/Desktop/school/projekt/cmake-build-debug",
-		"source" : "C:/Users/hoang/Desktop/school/projekt"
+		"build" : "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/cmake-build-debug",
+		"source" : "C:/Users/hoang/Desktop/school/ZOO-PROJEKT"
 	},
 	"version" : 
 	{
