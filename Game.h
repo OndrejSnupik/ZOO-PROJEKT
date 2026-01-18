@@ -11,6 +11,10 @@
 #include "EnemyFactory/EnemyFactory.h"
 #include "EnemyFactory/EasyEnemyFactory.h"
 #include  "EnemyFactory/HardEnemyFactory.h"
+#include "Hallway.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <conio.h> // for _kbhit() and _getch()
 #include <windows.h> // for Sleep()
 
@@ -27,7 +31,7 @@ class Game {
     int m_lastHeroX;
     int m_lastHeroY;
 
-    void handleInput(); // vstupy z klávesnice
+    bool handleInput(); // vstupy z klávesnice
     void generateRandomTile(int x, int y, int incomingDirection); // Generuje novou místnost
     Enemy* spawnEnemy();
     void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);

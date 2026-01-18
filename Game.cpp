@@ -1,10 +1,4 @@
 #include "Game.h"
-#include "Hallway.h"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-
-#include "CombatSystem.h"
 
 Game::Game(int difficulty) {
     // generátor náhodných čísel
@@ -21,6 +15,8 @@ Game::Game(int difficulty) {
     // Vytvoří mapu a hrdinu
     m_map = new Map(20, 20);
     m_hero = new Hero(10, 10, 100, 30);
+    m_lastHeroX = m_hero->getX();
+    m_lastHeroY = m_hero->getY();
 
     //Vloží startovní dlaždici doprostřed mapy
     m_map->placeTile(10, 10, new Hallway(true, true, true, true));
@@ -33,134 +29,117 @@ Game::Game(int difficulty) {
 Game::~Game() {
     delete m_map;
     delete m_hero;
+    delete m_enemy;
 }
 
 void Game::run() {
+    bool redraw = true; //redraw the UI when movement happens true= redraw UI or false= skip redraw
     std::cout << "--- HRA ZACINA ---" << std::endl;
 
     // Hlavní herní smyčka
     while (m_isRunning) {
-        for(int i=0; i<3; i++) std::cout << "\n";
+        if (redraw) {
+            system("cls");
+            for(int i=0; i<3; i++) std::cout << "\n";
+            int x = m_hero->getX();
+            int y = m_hero->getY();
+            Tile* currentTile = m_map->getTile(x, y);
+            std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp();
+            std::cout <<" Attack: "<< m_hero->getBaseAttack() << std::endl;
 
-        int x = m_hero->getX();
-        int y = m_hero->getY();
-        Tile* currentTile = m_map->getTile(x, y);
-
-        std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp();
-        std::cout <<" Attack: "<< m_hero->getBaseAttack() << std::endl;
-
-        if (currentTile != nullptr) {
-            currentTile->printTile(true);
-        } else {
-            std::cout << "CHYBA: Stojis v prazdnu!" << std::endl;
+            if (currentTile != nullptr) {
+                currentTile->printTile(true);
+            } else {
+                std::cout << "CHYBA: Stojis v prazdnu!" << std::endl;
+            }
+            std::cout << "Ovladani: [w] Sever, [s] Jih, [a] Zapad, [d] Vychod, [q] Konec" << std::endl;
+            redraw = false;
         }
-
-        std::cout << "Ovladani: [w] Sever, [s] Jih, [a] Zapad, [d] Vychod, [q] Konec" << std::endl;
-
-        handleInput();
+        if (handleInput()) {
+            redraw = true;
+        };
+        Sleep(20);
     }
 }
 
-void Game::handleInput() {
-    char input;
-    std::cout << "> ";
-    std::cin >> input;
+bool Game::handleInput() {
+    if (!_kbhit()) {
+        return false; // no key pressed, skip this frame
+    }
 
+    char input = _getch(); // read key immediately
     int currentX = m_hero->getX();
     int currentY = m_hero->getY();
-    //hero can be pushed back to previous tile when running away.
-    m_lastHeroX = currentX;
-    m_lastHeroY = currentY;
     Tile* currentTile = m_map->getTile(currentX, currentY);
-
     int targetX = currentX;
     int targetY = currentY;
 
     // Směr pohybu podle klávesy
     switch (input) {
-        case 'w':
-            if (currentTile->hasExit(0)) { // Kontrola jeslti vede cesta na sever
+        case 'w': // Kontrola jeslti vede cesta na sever
+            if (currentTile->hasExit(0)) {
                 targetY--;
-            } else {
-                std::cout << "Au! Narazil jsi do zdi." << std::endl;
-                std::cin.ignore(); std::cin.get();
-                return;
+            }else {
+                std::cout << "Au! Narazil jsi do zdi.\n";
+                return false;
             }
             break;
 
         case 's':
-            if (currentTile->hasExit(1)) { // Kontrola jihu
-                targetY++;
-            } else {
-                std::cout << "Au! Narazil jsi do zdi." << std::endl;
-                std::cin.ignore(); std::cin.get();
-                return;
+            if (currentTile->hasExit(1)) {
+                targetY++; // Kontrola jihu
+            }else {
+                std::cout << "Au! Narazil jsi do zdi.\n";
+                return false;
             }
             break;
 
         case 'a':
-            if (currentTile->hasExit(2)) { // Kontrola západu
-                targetX--;
-            } else {
-                std::cout << "Au! Narazil jsi do zdi." << std::endl;
-                std::cin.ignore(); std::cin.get();
-                return;
+            if (currentTile->hasExit(2)) {
+                targetX--; // Kontrola západu
+            }else {
+                std::cout << "Au! Narazil jsi do zdi.\n";
+                return false;
             }
             break;
 
         case 'd':
-            if (currentTile->hasExit(3)) { // Kontrola východu
-                targetX++;
-            } else {
-                std::cout << "Au! Narazil jsi do zdi." << std::endl;
-                std::cin.ignore(); std::cin.get();
-                return;
+            if (currentTile->hasExit(3)) {
+                targetX++; // Kontrola východu
+            }else {
+                std::cout << "Au! Narazil jsi do zdi.\n";
+                return false;
             }
             break;
 
         case 'q': // Ukončí hru
             m_isRunning = false;
-            return;
+            return false;
 
         default:
-            return;
+            return false;
     }
-
     // Zkontroluje jestli se hráč nesnaží vyjít mimo hranice mapy
-    if (targetX < 0 || targetX >= m_map->getWidth() || targetY < 0 || targetY >= m_map->getHeight()) {
-        std::cout << "Tam nemuzes, to je konec sveta!" << std::endl;
-        std::cin.ignore(); std::cin.get();
-        return;
-    }
-
+    if (targetX < 0 || targetX >= m_map->getWidth() ||
+        targetY < 0 || targetY >= m_map->getHeight()) {
+        std::cout << "Tam nemuzes, to je konec sveta!\n";
+        return false;
+        }
     // Pokud na cílovém políčku nic není vygeneruje novou dlaždici
     if (m_map->getTile(targetX, targetY) == nullptr) {
-
         int requiredEntry = -1;
-
         // Určí ze které strany hrdina přichází, aby na sebe cesty navazovaly
         if (targetY < currentY) requiredEntry = 1;
         else if (targetY > currentY) requiredEntry = 0;
         else if (targetX < currentX) requiredEntry = 3;
         else if (targetX > currentX) requiredEntry = 2;
-
         generateRandomTile(targetX, targetY, requiredEntry);
     }
-
     // Pokud je cílové políčko platné, přesune tam hrdinu
-    if (m_map->getTile(targetX, targetY) != nullptr) {
-        m_hero->setPosition(targetX, targetY);
-    }
-
-    // Combat check - open combat screen if there is an enemy
-    Tile * tile = m_map->getTile(targetX, targetY);
-    Enemy * enemy = tile->getEnemy();
-    if (enemy != nullptr) {
-        CombatSystem combat(m_hero, enemy);
-        CombatResult result = combat.run();
-        handleCombatResult(result, tile, enemy);
-    }
+    m_hero->setPosition(targetX, targetY);
+    return true; // movement happend
 }
+
 
 void Game::generateRandomTile(int x, int y, int incomingDirection) {
     // Zkusí 10x vygenerovat náhodnou dlaždici, která sedí
