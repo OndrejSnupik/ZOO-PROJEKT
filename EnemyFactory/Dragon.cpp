@@ -9,11 +9,6 @@ Dragon::Dragon() {
     setHeath(190);
 }
 
-Dragon::~Dragon() {
-    std::cout << "Victory" << std::endl;
-    //quit game or display the menu
-}
-
 char Dragon::getSymbol() {
     return 'D';
 }

@@ -14,7 +14,8 @@
 enum class CombatResult {
     EnemyDied,
     HeroDied,
-    HeroRan
+    HeroRan,
+    DragonDied
 };
 
 class CombatSystem {
