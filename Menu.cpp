@@ -97,8 +97,8 @@ void Menu::startNewGame() {
 
 void Menu::showCredits() {
     std::cout << "\n--- O AUTORECH ---" << "\n";
-    std::cout << "- Šňupík Ondřej" << "\n";
-    std::cout << "- Bunža Petr" << "\n";
+    std::cout << "- Snupik Ondrej" << "\n";
+    std::cout << "- Bunza Petr" << "\n";
     std::cout << "- Nguyen The Hoang" << "\n";
     std::cout << "- Verze: 1.0 (Karak)" << "\n";
     std::cout << "...Zmackni Enter pro navrat..." << std::endl;

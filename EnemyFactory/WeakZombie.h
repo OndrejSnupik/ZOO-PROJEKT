@@ -13,5 +13,4 @@ public:
     char getSymbol() override;
 };
 
-
 #endif //ZOO_PROJEKT_WEAKZOMBIE_H

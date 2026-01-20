@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2025.2.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1
+CMAKE_SOURCE_DIR = C:\Users\hoang\Desktop\school\ZOO-PROJEKT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,16 +86,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\CMakeFiles C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\CMakeFiles C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Downloads\ZOO-PROJEKT-Code1\ZOO-PROJEKT-Code1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -134,30 +134,6 @@ ZOO_PROJEKT: cmake_check_build_system
 ZOO_PROJEKT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/build
 .PHONY : ZOO_PROJEKT/fast
-
-EnemyFactory/ChooseDifficulty.obj: EnemyFactory/ChooseDifficulty.cpp.obj
-.PHONY : EnemyFactory/ChooseDifficulty.obj
-
-# target to build an object file
-EnemyFactory/ChooseDifficulty.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/ChooseDifficulty.cpp.obj
-.PHONY : EnemyFactory/ChooseDifficulty.cpp.obj
-
-EnemyFactory/ChooseDifficulty.i: EnemyFactory/ChooseDifficulty.cpp.i
-.PHONY : EnemyFactory/ChooseDifficulty.i
-
-# target to preprocess a source file
-EnemyFactory/ChooseDifficulty.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/ChooseDifficulty.cpp.i
-.PHONY : EnemyFactory/ChooseDifficulty.cpp.i
-
-EnemyFactory/ChooseDifficulty.s: EnemyFactory/ChooseDifficulty.cpp.s
-.PHONY : EnemyFactory/ChooseDifficulty.s
-
-# target to generate assembly for a file
-EnemyFactory/ChooseDifficulty.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/ChooseDifficulty.cpp.s
-.PHONY : EnemyFactory/ChooseDifficulty.cpp.s
 
 EnemyFactory/Dragon.obj: EnemyFactory/Dragon.cpp.obj
 .PHONY : EnemyFactory/Dragon.obj
@@ -206,6 +182,30 @@ EnemyFactory/EasyEnemyFactory.s: EnemyFactory/EasyEnemyFactory.cpp.s
 EnemyFactory/EasyEnemyFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/EasyEnemyFactory.cpp.s
 .PHONY : EnemyFactory/EasyEnemyFactory.cpp.s
+
+EnemyFactory/Enemy.obj: EnemyFactory/Enemy.cpp.obj
+.PHONY : EnemyFactory/Enemy.obj
+
+# target to build an object file
+EnemyFactory/Enemy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj
+.PHONY : EnemyFactory/Enemy.cpp.obj
+
+EnemyFactory/Enemy.i: EnemyFactory/Enemy.cpp.i
+.PHONY : EnemyFactory/Enemy.i
+
+# target to preprocess a source file
+EnemyFactory/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.i
+.PHONY : EnemyFactory/Enemy.cpp.i
+
+EnemyFactory/Enemy.s: EnemyFactory/Enemy.cpp.s
+.PHONY : EnemyFactory/Enemy.s
+
+# target to generate assembly for a file
+EnemyFactory/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.s
+.PHONY : EnemyFactory/Enemy.cpp.s
 
 EnemyFactory/EnemyFactory.obj: EnemyFactory/EnemyFactory.cpp.obj
 .PHONY : EnemyFactory/EnemyFactory.obj
@@ -615,6 +615,30 @@ Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.s
 .PHONY : Tile.cpp.s
 
+combatSystem.obj: combatSystem.cpp.obj
+.PHONY : combatSystem.obj
+
+# target to build an object file
+combatSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj
+.PHONY : combatSystem.cpp.obj
+
+combatSystem.i: combatSystem.cpp.i
+.PHONY : combatSystem.i
+
+# target to preprocess a source file
+combatSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.i
+.PHONY : combatSystem.cpp.i
+
+combatSystem.s: combatSystem.cpp.s
+.PHONY : combatSystem.s
+
+# target to generate assembly for a file
+combatSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.s
+.PHONY : combatSystem.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -649,15 +673,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ZOO_PROJEKT
-	@echo ... EnemyFactory/ChooseDifficulty.obj
-	@echo ... EnemyFactory/ChooseDifficulty.i
-	@echo ... EnemyFactory/ChooseDifficulty.s
 	@echo ... EnemyFactory/Dragon.obj
 	@echo ... EnemyFactory/Dragon.i
 	@echo ... EnemyFactory/Dragon.s
 	@echo ... EnemyFactory/EasyEnemyFactory.obj
 	@echo ... EnemyFactory/EasyEnemyFactory.i
 	@echo ... EnemyFactory/EasyEnemyFactory.s
+	@echo ... EnemyFactory/Enemy.obj
+	@echo ... EnemyFactory/Enemy.i
+	@echo ... EnemyFactory/Enemy.s
 	@echo ... EnemyFactory/EnemyFactory.obj
 	@echo ... EnemyFactory/EnemyFactory.i
 	@echo ... EnemyFactory/EnemyFactory.s
@@ -709,6 +733,9 @@ help:
 	@echo ... Tile.obj
 	@echo ... Tile.i
 	@echo ... Tile.s
+	@echo ... combatSystem.obj
+	@echo ... combatSystem.i
+	@echo ... combatSystem.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -61,10 +61,7 @@ void Game::run() {
         }
         if (handleInput()) {
             redraw = true; // redraw new tile
-            continue;
         }
-        Sleep(30);
-
     }
 }
 
@@ -73,10 +70,10 @@ bool Game::handleInput() {
         return false; // no key pressed, skip this frame
     }
 
-    char input = _getch(); // read key immediately
+    char input = _getch(); // read key
     int currentX = m_hero->getX();
     int currentY = m_hero->getY();
-    //hero can be pushed back to previous tile when running away.
+    //stored position so that hero can be pushed back to previous tile when running away.
     m_lastHeroX = currentX;
     m_lastHeroY = currentY;
     Tile* currentTile = m_map->getTile(currentX, currentY);
@@ -231,19 +228,35 @@ void Game::checkForCombat(Tile *tile) {
 
 void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {
     switch (result) {
-        case CombatResult::EnemyDied:
-            std::cout << "Porazil jsi nepratele" << std::endl;
-            delete enemy;
-            tile->setEnemy(nullptr);
-            break;
         case CombatResult::HeroDied:
+            std::cout << "---------------------\n";
             std::cout << "Zemrel jsi" << std::endl;
+            std::cout << "---------------------\n";
             m_isRunning = false;
             break;
         case CombatResult::HeroRan:
+            std::cout << "---------------------\n";
             std::cout << "Utekl jsi z boje!\n";
+            std::cout << "---------------------\n";
             //move back to previous tile
             m_hero->setPosition(m_lastHeroX, m_lastHeroY);
+            break;
+        case CombatResult::EnemyDied:
+            std::cout << "---------------------\n";
+            std::cout << "Porazil jsi nepratele" << std::endl;
+            std::cout << "---------------------\n";
+            delete enemy;
+            tile->setEnemy(nullptr);
+            break;
+        case CombatResult::DragonDied:
+            std::cout << "---------------------\n";
+            std::cout << "Victory!!" << std::endl;
+            std::cout << "---------------------\n";
+            delete enemy;
+            tile->setEnemy(nullptr);
+            m_isRunning = false;
+        default:
+            std::cout << "Neplatna volba." << std::endl;
             break;
     }
 }

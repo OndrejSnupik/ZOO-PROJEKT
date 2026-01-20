@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2025.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\ZOO_PROJEKT.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\ZOO_PROJEKT.dir/objects.a @CMakeFiles\ZOO_PROJEKT.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\ZOO_PROJEKT.dir/objects.a -Wl,--no-whole-archive -o ZOO_PROJEKT.exe -Wl,--out-implib,libZOO_PROJEKT.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ZOO_PROJEKT.dir\linkLibs.rsp

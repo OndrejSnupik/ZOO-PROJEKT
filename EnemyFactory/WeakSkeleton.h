@@ -8,9 +8,6 @@
 #include "Skeleton.h"
 
 class WeakSkeleton : public Skeleton{
-private:
-    int m_attack;
-    int m_heath;
 public:
     WeakSkeleton();
     char getSymbol() override;

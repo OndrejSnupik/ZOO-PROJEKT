@@ -4,8 +4,6 @@
 
 #include "CombatSystem.h"
 
-
-
 CombatSystem::CombatSystem(Hero *hero, Enemy *enemy) {
     m_hero = hero;
     m_enemy = enemy;
@@ -43,20 +41,16 @@ void CombatSystem::draw() {
 
 void CombatSystem::drawCombatUI() {
     std::cout << "\n" << "===== IN COMBAT ======" << "\n";
-
     std::cout << "Hero: " << m_hero->getName();
     std::cout << "                   ";
     std::cout << "Enemy: " << m_enemy->getSymbol()<< "\n";
-
     std::cout << "Heath: " << m_hero->getHp();
     std::cout << "               ";
     std::cout << "Heath: " << m_enemy->getHeath()<< "\n";
-
     std::cout << "AttackDMG: " << m_hero->getBaseAttack();
     std::cout << "            ";
     std::cout << "AttackDMG: " << m_enemy->getAttack()<< "\n";
     std::cout << "\n";
-
     std::cout << "=====Hero=====" << "\n";
     std::cout << "1. Use normal Attack " << "\n";
     std::cout << "2. Use Special Skill " << "\n";
@@ -103,6 +97,9 @@ CombatResult CombatSystem::handleCombat() {
         return CombatResult::HeroDied;
     }
 
+    if (m_enemy->getSymbol() == 'D' && m_enemy->getHeath() <= 0) {
+        return CombatResult::DragonDied;
+    }
     return CombatResult::EnemyDied;
 }
 
@@ -116,7 +113,7 @@ CombatResult CombatSystem::handleRun() {
     //enemy hit once before you ran away.
     int newHeroHeath = m_hero->getHp() - m_enemy->getAttack();
     m_hero->setHeath(newHeroHeath);
-    std::cout << m_enemy->getSymbol() << " te zasahl za"
+    std::cout << m_enemy->getSymbol() << " te zasahl za "
               << m_enemy->getAttack() << " dmg." << std::endl;
     if (newHeroHeath <= 0) {
         return CombatResult::HeroDied;
@@ -136,6 +133,6 @@ void CombatSystem::useBasicAttack() {
 
     int newHeroHeath = m_hero->getHp() - m_enemy->getAttack();
     m_hero->setHeath(newHeroHeath);
-    std::cout << m_enemy->getSymbol() << " te zasahl za"
+    std::cout << m_enemy->getSymbol() << " te zasahl za "
               << m_enemy->getAttack() << " dmg." << std::endl;
 }

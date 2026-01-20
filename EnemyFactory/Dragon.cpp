@@ -5,13 +5,8 @@
 #include "Dragon.h"
 
 Dragon::Dragon() {
-    m_attack = 25;
-    m_heath = 200;
-}
-
-Dragon::~Dragon() {
-    std::cout << "Victory" << std::endl;
-    //quit game or display the menu
+    setAttack(25);
+    setHeath(190);
 }
 
 char Dragon::getSymbol() {

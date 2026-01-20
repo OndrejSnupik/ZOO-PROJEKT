@@ -9,13 +9,9 @@
 #include "Zombie.h"
 
 class StrongZombie : public Zombie {
-private:
-    int m_attack;
-    int m_heath;
 public:
     StrongZombie();
     char getSymbol() override;
 };
-
 
 #endif //ZOO_PROJEKT_STRONGZOMBIE_H
