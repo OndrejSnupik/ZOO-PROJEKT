@@ -1,45 +1,40 @@
 #include "Game.h"
 
-Game::Game(int difficulty) {
-    // generátor náhodných čísel
-    std::srand(std::time(nullptr));
-
-    m_difficulty = difficulty;
-    if (difficulty == 1) {
-        m_enemyFactory = new EasyEnemyFactory();
-    } else {
-        m_enemyFactory = new HardEnemyFactory();
-    }
-    m_enemy = nullptr;
-
-    // Vytvoří mapu a hrdinu
-    m_map = new Map(20, 20);
-    m_hero = new Hero(10, 10, 100, 30);
-    m_lastHeroX = m_hero->getX();
-    m_lastHeroY = m_hero->getY();
-
-    //Vloží startovní dlaždici doprostřed mapy
-    m_map->placeTile(10, 10, new Hallway(true, true, true, true));
-
-    m_isRunning = true;
-    m_dragonSpawned = false;
-
-}
-
-Game::~Game() {
-    delete m_map;
-    delete m_hero;
-    delete m_enemy;
-}
 
 void Game::run() {
+    while (m_menuRunning) {
+        MenuAction action = m_menu->run();
+
+        switch (action) {
+            case MenuAction::startNewGame :{
+                m_difficulty = m_menu->chooseDifficulty();
+                if (m_difficulty == 1) {
+                    m_enemyFactory = new EasyEnemyFactory();
+                } else {
+                    m_enemyFactory = new HardEnemyFactory();
+                }
+                m_gameRunning = true;
+                runGameLoop();
+                break;
+            }
+            case MenuAction::showCredits: m_menu->showCredits();
+                break;
+                case MenuAction::quit:
+                m_menuRunning = false;
+                break;
+        }
+    }
+}
+
+void Game::runGameLoop() {
     bool redraw = true; //redraw the UI when movement happens true= redraw UI or false= skip redraw
     std::cout << "--- HRA ZACINA ---" << std::endl;
 
     // Hlavní herní smyčka
-    while (m_isRunning) {
-        if (redraw) {
-            system("cls");
+    while (m_gameRunning) {
+        if (redraw) { // if redraw is true
+            system("cls"); // clear screen
+
             for(int i=0; i<3; i++) std::cout << "\n";
             int x = m_hero->getX();
             int y = m_hero->getY();
@@ -59,10 +54,42 @@ void Game::run() {
             Tile * tile = m_map->getTile(m_hero->getX(), m_hero->getY());
             checkForCombat(tile);
         }
-        if (handleInput()) {
-            redraw = true; // redraw new tile
+        if (handleInput()) { // if a key is pressed then redraw UI
+            redraw = true;
         }
     }
+}
+
+Game::Game() {
+    // generátor náhodných čísel
+    std::srand(std::time(nullptr));
+    //vytvoří menu
+    m_menu = new Menu();
+
+    m_difficulty = 0;
+    m_enemyFactory = nullptr;
+    m_enemy = nullptr;
+    m_dragonSpawned = false;
+
+    // Vytvoří mapu a hrdinu
+    m_map = new Map(20, 20);
+    m_hero = new Hero(10, 10, 100, 30);
+    //stored position so that hero can be pushed back to previous tile when running away.
+    m_lastHeroX = m_hero->getX();
+    m_lastHeroY = m_hero->getY();
+
+    //Vloží startovní dlaždici doprostřed mapy
+    m_map->placeTile(10, 10, new Hallway(true, true, true, true));
+
+    m_menuRunning = true;
+    m_gameRunning = false;
+}
+
+Game::~Game() {
+    delete m_menu;
+    delete m_map;
+    delete m_hero;
+    delete m_enemy;
 }
 
 bool Game::handleInput() {
@@ -73,7 +100,6 @@ bool Game::handleInput() {
     char input = _getch(); // read key
     int currentX = m_hero->getX();
     int currentY = m_hero->getY();
-    //stored position so that hero can be pushed back to previous tile when running away.
     m_lastHeroX = currentX;
     m_lastHeroY = currentY;
     Tile* currentTile = m_map->getTile(currentX, currentY);
@@ -119,8 +145,8 @@ bool Game::handleInput() {
             break;
 
         case 'q': // Ukončí hru
-            m_isRunning = false;
-            return false;
+            m_gameRunning = false;
+            return true;
 
         default:
             return false;
@@ -232,7 +258,7 @@ void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {
             std::cout << "---------------------\n";
             std::cout << "Zemrel jsi" << std::endl;
             std::cout << "---------------------\n";
-            m_isRunning = false;
+            m_gameRunning = false;
             break;
         case CombatResult::HeroRan:
             std::cout << "---------------------\n";
@@ -254,9 +280,10 @@ void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {
             std::cout << "---------------------\n";
             delete enemy;
             tile->setEnemy(nullptr);
-            m_isRunning = false;
+            m_gameRunning = false;
         default:
             std::cout << "Neplatna volba." << std::endl;
             break;
     }
 }
+

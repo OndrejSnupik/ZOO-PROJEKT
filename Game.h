@@ -5,6 +5,7 @@
 #ifndef ZOO_PROJEKT_GAME_H
 #define ZOO_PROJEKT_GAME_H
 #include "CombatSystem.h"
+#include "Menu.h"
 #include "Hero.h"
 #include "Map.h"
 #include "EnemyFactory/Enemy.h"
@@ -20,11 +21,13 @@
 
 class Game {
     private:
+    Menu * m_menu;
     Map* m_map;
     Hero* m_hero;
     Enemy* m_enemy;
     EnemyFactory* m_enemyFactory;
-    bool m_isRunning; // Indikuje jestli herní smyčka běží
+    bool m_gameRunning;// Indikuje jestli herní smyčka běží
+    bool m_menuRunning;
     int m_difficulty;
     bool m_dragonSpawned;
     //stored hero previous tile
@@ -36,8 +39,9 @@ class Game {
     Enemy* spawnEnemy();
     void checkForCombat(Tile* tile);
     void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);
+    void runGameLoop();
 public:
-    Game(int difficulty);
+    Game();
     ~Game();
     void run(); // Spouští hlavní cyklus hry
 };

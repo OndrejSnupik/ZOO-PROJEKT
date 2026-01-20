@@ -5,18 +5,23 @@
 #ifndef ZOO_PROJEKT_MENU_H
 #define ZOO_PROJEKT_MENU_H
 
+#include <iostream>
+#include <limits> // Pro cin.ignore
+
+enum class MenuAction {
+    startNewGame,
+    showCredits,
+    quit
+};
 
 class Menu {
 private:
-    bool m_isRunning; // Určuje jestli menu jede
     void printOptions();
-    int chooseDifficulty();
-    void startNewGame();
-    void showCredits();
-
 public:
-    Menu();
-    void run();
+    Menu() = default;
+    MenuAction run();
+    int chooseDifficulty();
+    void showCredits();
 };
 
 

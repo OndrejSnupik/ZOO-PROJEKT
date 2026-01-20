@@ -3,11 +3,12 @@
 //
 
 
-#include "Menu.h"
+#include "Game.h"
 
 int main() {
-    Menu appMenu;  // Vytvoření Menu
-    appMenu.run(); // Spuštění Menu
+    Game* game = new Game();
+    game->run();
+
 
     return 0;
 }
