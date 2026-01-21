@@ -27,12 +27,12 @@ void Game::run() {
 }
 
 void Game::runGameLoop() {
-    bool redraw = true; //redraw the UI when movement happens true= redraw UI or false= skip redraw
+    m_redraw = true; //redraw the UI when movement happens true= redraw UI or false= skip redraw
     std::cout << "--- HRA ZACINA ---" << std::endl;
 
     // Hlavní herní smyčka
     while (m_gameRunning) {
-        if (redraw) { // if redraw is true
+        if (m_redraw) { // if redraw is true
             system("cls"); // clear screen
 
             for(int i=0; i<3; i++) std::cout << "\n";
@@ -49,13 +49,19 @@ void Game::runGameLoop() {
                 std::cout << "CHYBA: Stojis v prazdnu!" << std::endl;
             }
             std::cout << "Ovladani: [w] Sever, [s] Jih, [a] Zapad, [d] Vychod, [q] Konec" << std::endl;
-            redraw = false;
+            m_redraw = false;
+
             //check for combat
             Tile * tile = m_map->getTile(m_hero->getX(), m_hero->getY());
-            checkForCombat(tile);
+            // redraw Ui if combat is true
+            if (checkForCombat(tile)){
+                m_redraw = true;
+                continue;
+            }
         }
-        if (handleInput()) { // if a key is pressed then redraw UI
-            redraw = true;
+        // if a key is pressed then redraw UI
+        if (handleInput()) {
+            m_redraw = true;
         }
     }
 }
@@ -83,6 +89,7 @@ Game::Game() {
 
     m_menuRunning = true;
     m_gameRunning = false;
+    m_redraw = false;
 }
 
 Game::~Game() {
@@ -242,14 +249,17 @@ Enemy* Game::spawnEnemy() {
     return nullptr;
 }
 // Combat check - open combat screen if there is an enemy
-void Game::checkForCombat(Tile *tile) {
+bool Game::checkForCombat(Tile *tile) {
+    // If tile is empty or no enemy in the tile then no combat
     if (tile == nullptr || tile->getEnemy() == nullptr ){
-        return;
+        return false;
     }
-    Sleep(2000);
+    Sleep(20);
     CombatSystem combat(m_hero, tile->getEnemy());
     CombatResult result = combat.run();
     handleCombatResult(result, tile, tile->getEnemy());
+    // If combat ended or changed the tile, force redraw
+    return true;
 }
 
 void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {

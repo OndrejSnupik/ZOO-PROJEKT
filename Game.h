@@ -33,11 +33,13 @@ class Game {
     //stored hero previous tile
     int m_lastHeroX;
     int m_lastHeroY;
+    bool m_redraw; // clear screen and redraw if true
+
 
     bool handleInput(); // vstupy z klávesnice
     void generateRandomTile(int x, int y, int incomingDirection); // Generuje novou místnost
     Enemy* spawnEnemy();
-    void checkForCombat(Tile* tile);
+    bool checkForCombat(Tile* tile); // run combat system when true
     void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);
     void runGameLoop();
 public:
