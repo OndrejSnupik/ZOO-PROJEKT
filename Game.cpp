@@ -1,6 +1,5 @@
 #include "Game.h"
 
-
 void Game::run() {
     while (m_menuRunning) {
         MenuAction action = m_menu->run();
@@ -142,8 +141,8 @@ bool Game::handleInput() {
             break;
 
         case 's':
-            if (currentTile->hasExit(1)) {
-                targetY++; // Kontrola jihu
+            if (currentTile->hasExit(1)) { // Kontrola jihu
+                targetY++;
             }else {
                 std::cout << "Au! Narazil jsi do zdi.\n";
                 return false;
@@ -151,8 +150,8 @@ bool Game::handleInput() {
             break;
 
         case 'a':
-            if (currentTile->hasExit(2)) {
-                targetX--; // Kontrola západu
+            if (currentTile->hasExit(2)) { // Kontrola západu
+                targetX--;
             }else {
                 std::cout << "Au! Narazil jsi do zdi.\n";
                 return false;
@@ -160,15 +159,15 @@ bool Game::handleInput() {
             break;
 
         case 'd':
-            if (currentTile->hasExit(3)) {
-                targetX++; // Kontrola východu
+            if (currentTile->hasExit(3)) { // Kontrola východu
+                targetX++;
             }else {
                 std::cout << "Au! Narazil jsi do zdi.\n";
                 return false;
             }
             break;
 
-        case 'q': // Ukončí hru
+        case 'q': //end current game and back to menu
             m_gameRunning = false;
             return true;
 
@@ -201,7 +200,6 @@ bool Game::handleInput() {
     }
     return false;
 }
-
 
 void Game::generateRandomTile(int x, int y, int incomingDirection) {
     // Zkusí 10x vygenerovat náhodnou dlaždici, která sedí
