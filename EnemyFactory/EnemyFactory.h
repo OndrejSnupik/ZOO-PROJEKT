@@ -12,6 +12,8 @@
 
 class EnemyFactory {
     public:
+    EnemyFactory() = default;
+    virtual ~EnemyFactory() = default;
     virtual Zombie* getZombie() = 0;
     virtual Skeleton* getSkeleton() = 0;
     virtual Troll* getTroll() = 0;

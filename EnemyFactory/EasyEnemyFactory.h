@@ -11,6 +11,8 @@
 #include "WeakTroll.h"
 
 class EasyEnemyFactory : public EnemyFactory {
+public:
+    EasyEnemyFactory() = default;
     Zombie* getZombie() override;
     Skeleton* getSkeleton() override;
     Troll* getTroll() override;

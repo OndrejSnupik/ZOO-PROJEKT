@@ -66,6 +66,10 @@ void Game::runGameLoop() {
     }
 }
 
+void Game::resetGame() {
+
+}
+
 Game::Game() {
     // generátor náhodných čísel
     std::srand(std::time(nullptr));
@@ -96,6 +100,7 @@ Game::~Game() {
     delete m_menu;
     delete m_map;
     delete m_hero;
+    delete m_enemyFactory;
     delete m_enemy;
 }
 

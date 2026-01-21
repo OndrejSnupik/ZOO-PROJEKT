@@ -4,6 +4,11 @@
 
 #include "Enemy.h"
 
+Enemy::Enemy() {
+    m_attack = 0;
+    m_heath = 0;
+}
+
 int Enemy::getAttack() {
     return m_attack;
 }

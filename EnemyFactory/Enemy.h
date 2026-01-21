@@ -8,10 +8,10 @@
 
 class Enemy {
 private:
-    int m_attack = 0;
-    int m_heath = 0;
+    int m_attack;
+    int m_heath;
 public:
-    Enemy() = default;
+    Enemy();
     virtual ~Enemy() = default;
     int getAttack();
     int getHeath();

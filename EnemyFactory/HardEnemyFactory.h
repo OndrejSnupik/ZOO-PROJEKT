@@ -11,6 +11,8 @@
 #include "StrongTroll.h"
 
 class HardEnemyFactory : public EnemyFactory {
+    public:
+    HardEnemyFactory()= default;
     Zombie* getZombie() override;
     Skeleton* getSkeleton() override;
     Troll* getTroll() override;
