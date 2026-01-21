@@ -42,7 +42,7 @@ class Game {
     bool checkForCombat(Tile* tile); // run combat system when true
     void handleCombatResult(CombatResult result, Tile* tile, Enemy* enemy);
     void runGameLoop();
-    void resetGame();
+    void setUpNewGame();
 public:
     Game();
     ~Game();

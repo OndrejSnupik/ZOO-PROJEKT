@@ -66,6 +66,7 @@ void Menu::showCredits() {
 }
 
 void Menu::printOptions() {
+    system("cls"); // clear screen
     std::cout << "\n=========================" << "\n";
     std::cout << " /$$   /$$                              /$$      \n";
     std::cout << "| $$  /$$/                             | $$      \n";

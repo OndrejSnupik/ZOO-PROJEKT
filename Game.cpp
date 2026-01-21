@@ -8,13 +8,8 @@ void Game::run() {
         switch (action) {
             case MenuAction::startNewGame :{
                 m_difficulty = m_menu->chooseDifficulty();
-                if (m_difficulty == 1) {
-                    m_enemyFactory = new EasyEnemyFactory();
-                } else {
-                    m_enemyFactory = new HardEnemyFactory();
-                }
-                m_gameRunning = true;
-                runGameLoop();
+                setUpNewGame(); // delete old game and start new one
+                runGameLoop(); // run game
                 break;
             }
             case MenuAction::showCredits: m_menu->showCredits();
@@ -32,6 +27,11 @@ void Game::runGameLoop() {
 
     // Hlavní herní smyčka
     while (m_gameRunning) {
+        // if a key is pressed then redraw UI
+        if (handleInput()) {
+            m_redraw = true;
+        }
+
         if (m_redraw) { // if redraw is true
             system("cls"); // clear screen
 
@@ -59,16 +59,36 @@ void Game::runGameLoop() {
                 continue;
             }
         }
-        // if a key is pressed then redraw UI
-        if (handleInput()) {
-            m_redraw = true;
-        }
     }
 }
 
-void Game::resetGame() {
+void Game::setUpNewGame() {
+    // Delete old objects
+    delete m_map;
+    delete m_hero;
+    //delete m_enemyFactory;
 
+    // Vytvoří mapu a hrdinu
+    m_map = new Map(20, 20);
+    m_hero = new Hero(10, 10, 100, 30);
+    //stored position so that hero can be pushed back to previous tile when running away.
+    m_lastHeroX = m_hero->getX();
+    m_lastHeroY = m_hero->getY();
+
+    m_map->placeTile(10, 10, new Hallway(true, true, true, true));
+
+    if (m_difficulty == 1) {
+        m_enemyFactory = new EasyEnemyFactory();
+    } else {
+        m_enemyFactory = new HardEnemyFactory();
+    }
+
+    m_dragonSpawned = false;
+    m_gameRunning = true;
+    m_redraw = true;
 }
+
+
 
 Game::Game() {
     // generátor náhodných čísel
@@ -79,21 +99,14 @@ Game::Game() {
     m_difficulty = 0;
     m_enemyFactory = nullptr;
     m_enemy = nullptr;
+    m_map = nullptr;
+    m_hero = nullptr;
     m_dragonSpawned = false;
-
-    // Vytvoří mapu a hrdinu
-    m_map = new Map(20, 20);
-    m_hero = new Hero(10, 10, 100, 30);
-    //stored position so that hero can be pushed back to previous tile when running away.
-    m_lastHeroX = m_hero->getX();
-    m_lastHeroY = m_hero->getY();
-
-    //Vloží startovní dlaždici doprostřed mapy
-    m_map->placeTile(10, 10, new Hallway(true, true, true, true));
-
     m_menuRunning = true;
     m_gameRunning = false;
     m_redraw = false;
+    m_lastHeroX = 0;
+    m_lastHeroY = 0;
 }
 
 Game::~Game() {
@@ -101,7 +114,6 @@ Game::~Game() {
     delete m_map;
     delete m_hero;
     delete m_enemyFactory;
-    delete m_enemy;
 }
 
 bool Game::handleInput() {
