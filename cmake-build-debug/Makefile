@@ -543,6 +543,30 @@ Hero.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/Hero.cpp.s
 .PHONY : Hero.cpp.s
 
+HeroState.obj: HeroState.cpp.obj
+.PHONY : HeroState.obj
+
+# target to build an object file
+HeroState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj
+.PHONY : HeroState.cpp.obj
+
+HeroState.i: HeroState.cpp.i
+.PHONY : HeroState.i
+
+# target to preprocess a source file
+HeroState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.i
+.PHONY : HeroState.cpp.i
+
+HeroState.s: HeroState.cpp.s
+.PHONY : HeroState.s
+
+# target to generate assembly for a file
+HeroState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.s
+.PHONY : HeroState.cpp.s
+
 Map.obj: Map.cpp.obj
 .PHONY : Map.obj
 
@@ -591,6 +615,54 @@ Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/Menu.cpp.s
 .PHONY : Menu.cpp.s
 
+NormalState.obj: NormalState.cpp.obj
+.PHONY : NormalState.obj
+
+# target to build an object file
+NormalState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj
+.PHONY : NormalState.cpp.obj
+
+NormalState.i: NormalState.cpp.i
+.PHONY : NormalState.i
+
+# target to preprocess a source file
+NormalState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.i
+.PHONY : NormalState.cpp.i
+
+NormalState.s: NormalState.cpp.s
+.PHONY : NormalState.s
+
+# target to generate assembly for a file
+NormalState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.s
+.PHONY : NormalState.cpp.s
+
+StunnedState.obj: StunnedState.cpp.obj
+.PHONY : StunnedState.obj
+
+# target to build an object file
+StunnedState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj
+.PHONY : StunnedState.cpp.obj
+
+StunnedState.i: StunnedState.cpp.i
+.PHONY : StunnedState.i
+
+# target to preprocess a source file
+StunnedState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.i
+.PHONY : StunnedState.cpp.i
+
+StunnedState.s: StunnedState.cpp.s
+.PHONY : StunnedState.s
+
+# target to generate assembly for a file
+StunnedState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.s
+.PHONY : StunnedState.cpp.s
+
 Tile.obj: Tile.cpp.obj
 .PHONY : Tile.obj
 
@@ -614,6 +686,30 @@ Tile.s: Tile.cpp.s
 Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.s
 .PHONY : Tile.cpp.s
+
+WeakenState.obj: WeakenState.cpp.obj
+.PHONY : WeakenState.obj
+
+# target to build an object file
+WeakenState.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj
+.PHONY : WeakenState.cpp.obj
+
+WeakenState.i: WeakenState.cpp.i
+.PHONY : WeakenState.i
+
+# target to preprocess a source file
+WeakenState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.i
+.PHONY : WeakenState.cpp.i
+
+WeakenState.s: WeakenState.cpp.s
+.PHONY : WeakenState.s
+
+# target to generate assembly for a file
+WeakenState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.s
+.PHONY : WeakenState.cpp.s
 
 combatSystem.obj: combatSystem.cpp.obj
 .PHONY : combatSystem.obj
@@ -724,15 +820,27 @@ help:
 	@echo ... Hero.obj
 	@echo ... Hero.i
 	@echo ... Hero.s
+	@echo ... HeroState.obj
+	@echo ... HeroState.i
+	@echo ... HeroState.s
 	@echo ... Map.obj
 	@echo ... Map.i
 	@echo ... Map.s
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s
+	@echo ... NormalState.obj
+	@echo ... NormalState.i
+	@echo ... NormalState.s
+	@echo ... StunnedState.obj
+	@echo ... StunnedState.i
+	@echo ... StunnedState.s
 	@echo ... Tile.obj
 	@echo ... Tile.i
 	@echo ... Tile.s
+	@echo ... WeakenState.obj
+	@echo ... WeakenState.i
+	@echo ... WeakenState.s
 	@echo ... combatSystem.obj
 	@echo ... combatSystem.i
 	@echo ... combatSystem.s

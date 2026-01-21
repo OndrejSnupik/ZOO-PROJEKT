@@ -7,6 +7,8 @@
 StrongSkeleton::StrongSkeleton() {
     setAttack(15);
     setHeath(70);
+    setDebuff(DebuffType::Weaken, 10);
+    setName("Strong Skeleton");
 }
 
 char StrongSkeleton::getSymbol() {

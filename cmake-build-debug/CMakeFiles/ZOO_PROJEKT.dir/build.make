@@ -379,6 +379,62 @@ CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoang\Desktop\school\ZOO-PROJEKT\combatSystem.cpp -o CMakeFiles\ZOO_PROJEKT.dir\combatSystem.cpp.s
 
+CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/flags.make
+CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj: C:/Users/hoang/Desktop/school/ZOO-PROJEKT/HeroState.cpp
+CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj -MF CMakeFiles\ZOO_PROJEKT.dir\HeroState.cpp.obj.d -o CMakeFiles\ZOO_PROJEKT.dir\HeroState.cpp.obj -c C:\Users\hoang\Desktop\school\ZOO-PROJEKT\HeroState.cpp
+
+CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoang\Desktop\school\ZOO-PROJEKT\HeroState.cpp > CMakeFiles\ZOO_PROJEKT.dir\HeroState.cpp.i
+
+CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoang\Desktop\school\ZOO-PROJEKT\HeroState.cpp -o CMakeFiles\ZOO_PROJEKT.dir\HeroState.cpp.s
+
+CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/flags.make
+CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj: C:/Users/hoang/Desktop/school/ZOO-PROJEKT/NormalState.cpp
+CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj -MF CMakeFiles\ZOO_PROJEKT.dir\NormalState.cpp.obj.d -o CMakeFiles\ZOO_PROJEKT.dir\NormalState.cpp.obj -c C:\Users\hoang\Desktop\school\ZOO-PROJEKT\NormalState.cpp
+
+CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoang\Desktop\school\ZOO-PROJEKT\NormalState.cpp > CMakeFiles\ZOO_PROJEKT.dir\NormalState.cpp.i
+
+CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoang\Desktop\school\ZOO-PROJEKT\NormalState.cpp -o CMakeFiles\ZOO_PROJEKT.dir\NormalState.cpp.s
+
+CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/flags.make
+CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj: C:/Users/hoang/Desktop/school/ZOO-PROJEKT/WeakenState.cpp
+CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj -MF CMakeFiles\ZOO_PROJEKT.dir\WeakenState.cpp.obj.d -o CMakeFiles\ZOO_PROJEKT.dir\WeakenState.cpp.obj -c C:\Users\hoang\Desktop\school\ZOO-PROJEKT\WeakenState.cpp
+
+CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoang\Desktop\school\ZOO-PROJEKT\WeakenState.cpp > CMakeFiles\ZOO_PROJEKT.dir\WeakenState.cpp.i
+
+CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoang\Desktop\school\ZOO-PROJEKT\WeakenState.cpp -o CMakeFiles\ZOO_PROJEKT.dir\WeakenState.cpp.s
+
+CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/flags.make
+CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj: C:/Users/hoang/Desktop/school/ZOO-PROJEKT/StunnedState.cpp
+CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj: CMakeFiles/ZOO_PROJEKT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj -MF CMakeFiles\ZOO_PROJEKT.dir\StunnedState.cpp.obj.d -o CMakeFiles\ZOO_PROJEKT.dir\StunnedState.cpp.obj -c C:\Users\hoang\Desktop\school\ZOO-PROJEKT\StunnedState.cpp
+
+CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hoang\Desktop\school\ZOO-PROJEKT\StunnedState.cpp > CMakeFiles\ZOO_PROJEKT.dir\StunnedState.cpp.i
+
+CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hoang\Desktop\school\ZOO-PROJEKT\StunnedState.cpp -o CMakeFiles\ZOO_PROJEKT.dir\StunnedState.cpp.s
+
 # Object files for target ZOO_PROJEKT
 ZOO_PROJEKT_OBJECTS = \
 "CMakeFiles/ZOO_PROJEKT.dir/main.cpp.obj" \
@@ -402,7 +458,11 @@ ZOO_PROJEKT_OBJECTS = \
 "CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakTroll.cpp.obj" \
 "CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongTroll.cpp.obj" \
 "CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj" \
-"CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj"
+"CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj" \
+"CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj" \
+"CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj" \
+"CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj" \
+"CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj"
 
 # External object files for target ZOO_PROJEKT
 ZOO_PROJEKT_EXTERNAL_OBJECTS =
@@ -429,11 +489,15 @@ ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/WeakTroll.cpp.obj
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/StrongTroll.cpp.obj
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/EnemyFactory/Enemy.cpp.obj
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj
+ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj
+ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj
+ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj
+ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/build.make
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/linkLibs.rsp
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/objects1.rsp
 ZOO_PROJEKT.exe: CMakeFiles/ZOO_PROJEKT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable ZOO_PROJEKT.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable ZOO_PROJEKT.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ZOO_PROJEKT.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

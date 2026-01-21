@@ -7,6 +7,8 @@
 WeakSkeleton::WeakSkeleton() {
     setAttack(10);
     setHeath(45);
+    setDebuff(DebuffType::Weaken, 5);
+    setName("Skeleton");
 }
 
 char WeakSkeleton::getSymbol() {

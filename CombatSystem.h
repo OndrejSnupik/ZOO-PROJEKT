@@ -15,25 +15,29 @@ enum class CombatResult {
     EnemyDied,
     HeroDied,
     HeroRan,
-    DragonDied
+    DragonDied,
+    None
 };
 
 class CombatSystem {
 private:
     Hero* m_hero;
     Enemy* m_enemy;
+    CombatResult m_result;
 public:
     CombatSystem(Hero * hero, Enemy * enemy);
-
-    CombatResult run();
+    void run();
+    CombatResult getCombatResult();
 private:
     void draw();
     void drawCombatUI();
 
-    CombatResult handleCombat();
-    CombatResult handleRun();
+    void handleCombat();
+    void handleFlee();
 
-    void useBasicAttack();
+    void heroTurn();
+    void enemyAttack();
+    void normalAttack();
 
 };
 

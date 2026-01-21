@@ -7,6 +7,8 @@
 Dragon::Dragon() {
     setAttack(25);
     setHeath(190);
+    setDebuff(DebuffType::Stun, 15);
+    setName("Fire Dragon");
 }
 
 char Dragon::getSymbol() {

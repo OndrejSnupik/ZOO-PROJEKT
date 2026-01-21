@@ -4,14 +4,20 @@
 
 #include "Hero.h"
 
-#include <iostream>
+
 
 // Inicializuje hrdinu s danou polohou a životy
 Hero::Hero(int x, int y, int hp, int baseAttack) {
+    m_name = "Howard Walters";
     m_x = x;
     m_y = y;
     m_hp = hp;
     m_baseAttack = baseAttack;
+    m_state = new NormalState();
+}
+
+Hero::~Hero() {
+    delete m_state;
 }
 
 int Hero::getX() {
@@ -39,12 +45,30 @@ void Hero::setHp(int amount) {
     m_hp = amount;
 }
 
-int Hero::getBaseAttack() {
-    return m_baseAttack;
+int Hero::getAttack() {
+    return m_state->getModifyDamage(m_baseAttack);
 }
 
 std::string Hero::getName() {
     return m_name;
+}
+
+void Hero::setState(HeroState * newState) {
+    m_state->printEndState();
+    delete m_state;
+    m_state = newState;
+    m_state->printState();
+}
+
+void Hero::updateState() {
+    m_state->onTurn();
+    if (m_state->isStateEnd()) {
+        setState(new NormalState());
+    }
+}
+
+bool Hero::isStunned() {
+    return m_state->getIsStunned();
 }
 
 

@@ -159,4 +159,8 @@ CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
  C:\Users\hoang\Desktop\school\ZOO-PROJEKT\EnemyFactory/Enemy.h \
- C:\Users\hoang\Desktop\school\ZOO-PROJEKT\Hero.h
+ C:\Users\hoang\Desktop\school\ZOO-PROJEKT\Hero.h \
+ C:\Users\hoang\Desktop\school\ZOO-PROJEKT\HeroState.h \
+ C:\Users\hoang\Desktop\school\ZOO-PROJEKT\NormalState.h \
+ C:\Users\hoang\Desktop\school\ZOO-PROJEKT\StunnedState.h \
+ C:\Users\hoang\Desktop\school\ZOO-PROJEKT\WeakenState.h

@@ -7,6 +7,8 @@
 StrongTroll::StrongTroll() {
     setAttack(14);
     setHeath(120);
+    setDebuff(DebuffType::Stun, 15);
+    setName("Ice Troll");
 }
 
 char StrongTroll::getSymbol() {

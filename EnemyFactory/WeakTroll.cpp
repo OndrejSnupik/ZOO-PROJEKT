@@ -9,6 +9,8 @@
 WeakTroll::WeakTroll() {
     setAttack(8);
     setHeath(80);
+    setDebuff(DebuffType::Stun, 10);
+    setName("Troll");
 }
 
 char WeakTroll::getSymbol() {

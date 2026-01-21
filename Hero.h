@@ -5,7 +5,11 @@
 #ifndef ZOO_PROJEKT_HERO_H
 #define ZOO_PROJEKT_HERO_H
 
-#include <string>
+#include <iostream>
+#include "HeroState.h"
+#include "NormalState.h"
+#include "StunnedState.h"
+#include "WeakenState.h"
 
 class Hero {
 private:
@@ -15,20 +19,21 @@ private:
     int m_hp; //  Počet životů
     // int m_level;
     int m_baseAttack;
+    HeroState * m_state;
 public:
     Hero(int x, int y, int hp, int baseAttack);
+    ~Hero();
+    std::string getName();
     int getX();
     int getY();
     int getHp();
     void setPosition(int x, int y);
     void changeHp(int hp);
     void setHp(int amount);
-    int getBaseAttack();
-    std::string getName();
-
-    // void levelUp();
-    // void getItem();
-    // void dropItem();
+    int getAttack();
+    void setState(HeroState * newState );
+    void updateState();
+    bool isStunned();
 };
 
 #endif //ZOO_PROJEKT_HERO_H

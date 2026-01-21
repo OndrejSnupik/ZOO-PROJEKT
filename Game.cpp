@@ -40,7 +40,7 @@ void Game::runGameLoop() {
             Tile* currentTile = m_map->getTile(x, y);
 
             std::cout << "Pozice: [" << x << "," << y << "] | Zivoty: " << m_hero->getHp();
-            std::cout <<" Attack: "<< m_hero->getBaseAttack() << std::endl;
+            std::cout <<" Attack: "<< m_hero->getAttack() << std::endl;
 
             if (currentTile != nullptr) {
                 currentTile->printTile(true);
@@ -270,8 +270,8 @@ bool Game::checkForCombat(Tile *tile) {
         return false;
     }
     CombatSystem combat(m_hero, tile->getEnemy());
-    CombatResult result = combat.run();
-    handleCombatResult(result, tile, tile->getEnemy());
+    combat.run();
+    handleCombatResult(combat.getCombatResult(), tile, tile->getEnemy());
     // If combat ended or changed the tile, then redraw
     return true;
 }

@@ -84,12 +84,12 @@ clean: CMakeFiles/ZOO_PROJEKT.dir/clean
 CMakeFiles/ZOO_PROJEKT.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target ZOO_PROJEKT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target ZOO_PROJEKT"
 .PHONY : CMakeFiles/ZOO_PROJEKT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ZOO_PROJEKT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/ZOO_PROJEKT.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/ZOO_PROJEKT.dir/rule
@@ -101,7 +101,7 @@ ZOO_PROJEKT: CMakeFiles/ZOO_PROJEKT.dir/rule
 # codegen rule for target.
 CMakeFiles/ZOO_PROJEKT.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ZOO_PROJEKT.dir\build.make CMakeFiles/ZOO_PROJEKT.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Finished codegen for target ZOO_PROJEKT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\hoang\Desktop\school\ZOO-PROJEKT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Finished codegen for target ZOO_PROJEKT"
 .PHONY : CMakeFiles/ZOO_PROJEKT.dir/codegen
 
 # clean rule for target.

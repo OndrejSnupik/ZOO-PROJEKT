@@ -48,4 +48,12 @@ add_executable(ZOO_PROJEKT
         EnemyFactory/Enemy.h
         combatSystem.cpp
         combatSystem.h
+        HeroState.cpp
+        HeroState.h
+        NormalState.cpp
+        NormalState.h
+        WeakenState.cpp
+        WeakenState.h
+        StunnedState.cpp
+        StunnedState.h
 )

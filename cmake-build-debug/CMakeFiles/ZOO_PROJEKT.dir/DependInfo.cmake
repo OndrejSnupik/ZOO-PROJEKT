@@ -25,9 +25,13 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Game.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Game.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Game.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Hallway.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Hallway.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Hallway.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Hero.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Hero.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Hero.cpp.obj.d"
+  "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/HeroState.cpp" "CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/HeroState.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Map.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Map.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Map.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Menu.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Menu.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Menu.cpp.obj.d"
+  "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/NormalState.cpp" "CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/NormalState.cpp.obj.d"
+  "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/StunnedState.cpp" "CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/StunnedState.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/Tile.cpp" "CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/Tile.cpp.obj.d"
+  "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/WeakenState.cpp" "CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/WeakenState.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/combatSystem.cpp" "CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/combatSystem.cpp.obj.d"
   "C:/Users/hoang/Desktop/school/ZOO-PROJEKT/main.cpp" "CMakeFiles/ZOO_PROJEKT.dir/main.cpp.obj" "gcc" "CMakeFiles/ZOO_PROJEKT.dir/main.cpp.obj.d"
   )

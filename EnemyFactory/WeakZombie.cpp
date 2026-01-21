@@ -7,6 +7,8 @@
 WeakZombie::WeakZombie() {
     setAttack(5);
     setHeath(70);
+    setDebuff(DebuffType::Weaken, 10);
+    setName("Zombie");
 }
 
 char WeakZombie::getSymbol() {
