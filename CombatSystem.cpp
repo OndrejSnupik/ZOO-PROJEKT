@@ -112,7 +112,7 @@ CombatResult CombatSystem::handleRun() {
     std::cout << "Utekl jsi ale..." << std::endl;
     //enemy hit once before you ran away.
     int newHeroHeath = m_hero->getHp() - m_enemy->getAttack();
-    m_hero->setHeath(newHeroHeath);
+    m_hero->setHp(newHeroHeath);
     std::cout << m_enemy->getSymbol() << " te zasahl za "
               << m_enemy->getAttack() << " dmg." << std::endl;
     if (newHeroHeath <= 0) {
@@ -132,7 +132,7 @@ void CombatSystem::useBasicAttack() {
     }
 
     int newHeroHeath = m_hero->getHp() - m_enemy->getAttack();
-    m_hero->setHeath(newHeroHeath);
+    m_hero->setHp(newHeroHeath);
     std::cout << m_enemy->getSymbol() << " te zasahl za "
               << m_enemy->getAttack() << " dmg." << std::endl;
 }

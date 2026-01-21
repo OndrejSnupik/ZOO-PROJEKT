@@ -269,11 +269,10 @@ bool Game::checkForCombat(Tile *tile) {
     if (tile == nullptr || tile->getEnemy() == nullptr ){
         return false;
     }
-    Sleep(20);
     CombatSystem combat(m_hero, tile->getEnemy());
     CombatResult result = combat.run();
     handleCombatResult(result, tile, tile->getEnemy());
-    // If combat ended or changed the tile, force redraw
+    // If combat ended or changed the tile, then redraw
     return true;
 }
 
@@ -301,7 +300,7 @@ void Game::handleCombatResult(CombatResult result, Tile *tile, Enemy *enemy) {
             break;
         case CombatResult::DragonDied:
             std::cout << "---------------------\n";
-            std::cout << "Victory!!" << std::endl;
+            std::cout << "Vyhral jsi!!!" << std::endl;
             std::cout << "---------------------\n";
             delete enemy;
             tile->setEnemy(nullptr);

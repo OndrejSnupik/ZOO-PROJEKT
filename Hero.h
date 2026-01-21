@@ -22,7 +22,7 @@ public:
     int getHp();
     void setPosition(int x, int y);
     void changeHp(int hp);
-    void setHeath(int amount);
+    void setHp(int amount);
     int getBaseAttack();
     std::string getName();
 

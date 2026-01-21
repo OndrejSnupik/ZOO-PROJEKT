@@ -64,4 +64,3 @@ int Map::getWidth() {
 int Map::getHeight() {
     return m_height;
 }
-

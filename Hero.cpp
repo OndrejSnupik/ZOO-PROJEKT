@@ -33,14 +33,9 @@ void Hero::setPosition(int x, int y) {
 
 void Hero::changeHp(int hp) {
     m_hp += hp;
-
-    if (m_hp < 0) {
-        m_hp = 0;
-        std::cout << "Hrdina zemrel" << std::endl;
-    }
 }
 
-void Hero::setHeath(int amount) {
+void Hero::setHp(int amount) {
     m_hp = amount;
 }
 
